@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled, { css } from "styled-components";
 
 const Wrapper = styled.div`
@@ -12,6 +12,7 @@ const Wrapper = styled.div`
   right: 3%;
   border: 2px solid ${({ theme }) => theme.darkBrown};
   z-index: 9999;
+  transition: border 0.3s 0.1s ease-in-out;
 
   ${({ isOpen }) =>
     isOpen &&
@@ -46,6 +47,7 @@ const HamburgerLine = styled.span`
   top: 50%;
   transform: translateY(-50%);
   transition: background-color 0.3s 0.1s ease-in-out;
+  overflow: visible;
   z-index: 9999;
 
   &::before,
@@ -85,12 +87,10 @@ const HamburgerLine = styled.span`
     `}
 `;
 
-const HamburgerMenu = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
+const HamburgerMenu = ({ handleSetIsOpen, isOpen }) => {
   return (
-    <Wrapper isOpen={isOpen}>
-      <HamburgerBox onClick={() => setIsOpen(!isOpen)}>
+    <Wrapper isOpen={isOpen} onClick={handleSetIsOpen}>
+      <HamburgerBox>
         <HamburgerLine isOpen={isOpen} />
       </HamburgerBox>
     </Wrapper>

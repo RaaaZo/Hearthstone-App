@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
     padding: 0;
-    /* overflow: hidden; */
+
 }
 
 html {
@@ -20,6 +20,7 @@ body{
     color: #FFF4F4F4;
     font-weight: 400;
     font-family: 'Montserrat';
+    overflow-x: hidden;
 
 }
 `;
