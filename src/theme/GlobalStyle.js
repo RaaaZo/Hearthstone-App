@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
     padding: 0;
+    /* overflow: hidden; */
 }
 
 html {
