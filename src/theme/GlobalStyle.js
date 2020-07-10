@@ -15,10 +15,10 @@ html {
 
 body{
     font-size: 1.6rem;
-    background-color: #303030;
+    background-color: #ead2ac;
     color: #FFF4F4F4;
     font-weight: 400;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat';
 
 }
 `;
