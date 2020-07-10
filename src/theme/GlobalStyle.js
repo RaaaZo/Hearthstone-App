@@ -20,7 +20,6 @@ body{
     color: #FFF4F4F4;
     font-weight: 400;
     font-family: 'Montserrat';
-    overflow-x: hidden;
 
 }
 `;

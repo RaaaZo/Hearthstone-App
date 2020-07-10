@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import Logo from "components/atoms/Logo/Logo";
 import styled, { css } from "styled-components";
 import HamburgerMenu from "components/molecules/HamburgerMenu/HamburgerMenu";
 import Navigation from "components/molecules/Navigation/Navigation";
 import { NavLink } from "react-router-dom";
 import HamburgerModal from "components/molecules/HamburgerModal/HamburgerModal";
+import { useSelector } from "react-redux";
 
 const Wrapper = styled.div`
   display: flex;
@@ -15,6 +16,7 @@ const Wrapper = styled.div`
   padding: 0 10px;
   background-color: ${({ theme }) => theme.darkBrown};
   box-shadow: 0px 3px 20px 0px ${({ theme }) => theme.darkBrown};
+  overflow: hidden;
 
   @media (min-width: 1240px) {
     justify-content: space-between;
@@ -42,11 +44,7 @@ const StyledLogo = styled(Logo)`
 `;
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleSetIsOpen = () => {
-    setIsOpen(!isOpen);
-  };
+  const isOpen = useSelector((state) => state.modalReducer.isOpen);
 
   return (
     <>
@@ -54,10 +52,10 @@ const Navbar = () => {
         <StyledLogo isOpen={isOpen} as={NavLink} to='/home'>
           HearthStoneDB
         </StyledLogo>
-        <HamburgerMenu handleSetIsOpen={handleSetIsOpen} isOpen={isOpen} />
+        <HamburgerMenu />
         <Navigation />
+        <HamburgerModal />
       </Wrapper>
-      <HamburgerModal isOpen={isOpen} />
     </>
   );
 };

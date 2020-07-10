@@ -1,5 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import { useSelector, useDispatch } from "react-redux";
+import { toggleModal } from "ducks/actions/ModalActions";
 
 const Wrapper = styled.div`
   padding: 10px;
@@ -87,9 +89,17 @@ const HamburgerLine = styled.span`
     `}
 `;
 
-const HamburgerMenu = ({ handleSetIsOpen, isOpen }) => {
+const HamburgerMenu = () => {
+  const isOpen = useSelector((state) => state.modalReducer.isOpen);
+  const dispatch = useDispatch();
+
+  const handleIsOpen = (e) => {
+    e.stopPropagation();
+    dispatch(toggleModal());
+  };
+
   return (
-    <Wrapper isOpen={isOpen} onClick={handleSetIsOpen}>
+    <Wrapper isOpen={isOpen} onClick={handleIsOpen}>
       <HamburgerBox>
         <HamburgerLine isOpen={isOpen} />
       </HamburgerBox>

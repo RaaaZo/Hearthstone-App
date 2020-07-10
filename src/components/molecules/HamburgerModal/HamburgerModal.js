@@ -1,9 +1,12 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { closeModal } from "ducks/actions/ModalActions";
 
 const Wrapper = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   width: 250px;
@@ -52,16 +55,40 @@ const StyledNavLinks = styled(NavLink)`
   }
 `;
 
-const HamburgerModal = ({ isOpen }) => {
+const HamburgerModal = () => {
+  const isOpen = useSelector((state) => state.modalReducer.isOpen);
+  const dispatch = useDispatch();
+
   return (
-    <Wrapper isOpen={isOpen}>
+    <Wrapper isOpen={isOpen} onClick={(e) => e.stopPropagation()}>
       <InnerWrapper>
-        <StyledNavLinks to='/classes'>Klasy kart</StyledNavLinks>
-        <StyledNavLinks to='/expansions'>Ekspansje</StyledNavLinks>
-        <StyledNavLinks to='/championSkins'>Skórki Bohaterów</StyledNavLinks>
-        <StyledNavLinks to='/typesOfCards'>Typy kart</StyledNavLinks>
-        <StyledNavLinks to='/races'>Rasy</StyledNavLinks>
-        <StyledNavLinks to='/qualityOfCards'>Jakość kart</StyledNavLinks>
+        <StyledNavLinks onClick={() => dispatch(closeModal())} to='/classes'>
+          Klasy kart
+        </StyledNavLinks>
+        <StyledNavLinks onClick={() => dispatch(closeModal())} to='/expansions'>
+          Ekspansje
+        </StyledNavLinks>
+        <StyledNavLinks
+          onClick={() => dispatch(closeModal())}
+          to='/championSkins'
+        >
+          Skórki Bohaterów
+        </StyledNavLinks>
+        <StyledNavLinks
+          onClick={() => dispatch(closeModal())}
+          to='/typesOfCards'
+        >
+          Typy kart
+        </StyledNavLinks>
+        <StyledNavLinks onClick={() => dispatch(closeModal())} to='/races'>
+          Rasy
+        </StyledNavLinks>
+        <StyledNavLinks
+          onClick={() => dispatch(closeModal())}
+          to='/qualityOfCards'
+        >
+          Jakość kart
+        </StyledNavLinks>
       </InnerWrapper>
     </Wrapper>
   );
