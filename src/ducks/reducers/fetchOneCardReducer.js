@@ -5,7 +5,7 @@ import {
 } from "ducks/constants/FetchConstants";
 
 const initialState = {
-  loading: false,
+  loading: true,
   OneCardData: [],
   error: "",
 };

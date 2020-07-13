@@ -1,14 +1,26 @@
-import React from "react";
-import DescriptionStories from "components/molecules/LandingPage/Description/Description";
+import React, { useEffect } from "react";
+import PageDescription from "components/molecules/LandingPage/PageDescription/PageDescription";
+import CardImage from "components/molecules/LandingPage/CardImage/CardImage";
+import { useDispatch } from "react-redux";
+import { fetchOneCard } from "ducks/actions/fetchOneCardDataActions";
+import CardDesc from "components/molecules/LandingPage/CardDesc/CardDesc";
+import CardBtn from "components/molecules/LandingPage/CardBtn/CardBtn";
+import Wrapper from "components/molecules/LandingPage/Wrapper/Wrapper";
 
 const LandingPage = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchOneCard());
+  }, []);
+
   return (
-    <>
-      <DescriptionStories />
-      <p>image</p>
-      <p>co mozemy znalezc na karcie</p>
-      <button>Przejdź dalej</button>
-    </>
+    <Wrapper>
+      <PageDescription />
+      <CardImage />
+      <CardDesc />
+      <CardBtn />
+    </Wrapper>
   );
 };
 

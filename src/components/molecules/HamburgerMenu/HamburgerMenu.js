@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   position: fixed;
   bottom: 3%;
   right: 3%;
-  border: 2px solid ${({ theme }) => theme.darkBrown};
+  border: 2px solid ${({ theme }) => theme.darkModeTxt};
   z-index: 9999;
   transition: border 0.3s 0.1s ease-in-out;
 
@@ -43,7 +43,7 @@ const HamburgerBox = styled.button`
 const HamburgerLine = styled.span`
   width: 100%;
   height: 3px;
-  background-color: ${({ theme }) => theme.darkBrown};
+  background-color: ${({ theme }) => theme.darkModeTxt};
   position: absolute;
   left: 0;
   top: 50%;
@@ -58,7 +58,7 @@ const HamburgerLine = styled.span`
     width: 100%;
     height: 3px;
     left: 0;
-    background-color: ${({ theme }) => theme.darkBrown};
+    background-color: ${({ theme }) => theme.darkModeTxt};
     position: absolute;
     transition: transform 0.3s 0.1s ease-in-out;
     z-index: 9999;
@@ -79,12 +79,10 @@ const HamburgerLine = styled.span`
 
       &::before {
         transform: translateY(10px) rotate(-45deg);
-        background-color: ${({ theme }) => theme.darkModeTxt};
       }
 
       &::after {
         transform: translateY(-10px) rotate(45deg);
-        background-color: ${({ theme }) => theme.darkModeTxt};
       }
     `}
 `;

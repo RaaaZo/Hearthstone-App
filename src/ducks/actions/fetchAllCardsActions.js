@@ -37,6 +37,9 @@ export const fetchAllCards = () => {
         "x-rapidapi-key": process.env.REACT_APP_API_KEY,
         useQueryString: true,
       },
+      params: {
+        locale: "plPL",
+      },
     })
       .then((response) => {
         // response.data is the AllCards

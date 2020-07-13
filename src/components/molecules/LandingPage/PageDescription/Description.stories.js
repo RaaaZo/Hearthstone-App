@@ -1,5 +1,5 @@
 import React from "react";
-import LandingPageDesc from "./Description";
+import LandingPageDesc from "./PageDescription";
 
 export default {
   component: LandingPageDesc,

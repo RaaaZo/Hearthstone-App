@@ -2,13 +2,14 @@ import styled, { css } from "styled-components";
 
 const Button = styled.button`
   font-size: ${({ theme: { fontSize } }) => fontSize.l};
+  padding: 15px;
+  text-align: center;
   font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
   color: ${({ theme }) => theme.darkModeTxt};
   background-color: ${({ theme: { purpleBtnGradient } }) =>
     purpleBtnGradient.backgroundColor};
   background-image: ${({ theme: { purpleBtnGradient } }) =>
     purpleBtnGradient.backgroundImage};
-  padding: 20px;
   border: none;
   border-radius: 15px;
 

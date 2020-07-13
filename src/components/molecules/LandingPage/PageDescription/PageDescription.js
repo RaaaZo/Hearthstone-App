@@ -8,18 +8,21 @@ const Wrapper = styled.div`
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 30px 0;
+  max-width: 1280px;
 `;
 
 const HeroWrapper = styled.div`
   display: flex;
   width: 100%;
   height: 300px;
+  margin-top: 30px;
   background-image: url(${heroImg});
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   border-top: 1px solid ${({ theme }) => theme.darkBrown};
+  border-radius: 15px;
 
   @media (min-width: 632px) {
     height: 500px;
@@ -36,10 +39,16 @@ const HeroWrapper = styled.div`
 `;
 
 const StyledParagraph = styled(Paragraph)`
-  margin-top: 10px;
-  padding: 20px 20%;
+  max-width: 1280px;
+  margin-top: 30px;
+  padding: 40px 10%;
   text-align: center;
   background-color: ${({ theme }) => theme.darkBrown};
+  border-radius: 15px;
+
+  @media (min-width: 768px) {
+    padding: 40px 15%;
+  }
 `;
 
 const LandingPageDesc = () => {
