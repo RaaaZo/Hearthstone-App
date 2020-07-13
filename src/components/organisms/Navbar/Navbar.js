@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "components/atoms/Logo/Logo";
 import styled, { css } from "styled-components";
 import HamburgerMenu from "components/molecules/HamburgerMenu/HamburgerMenu";
-import Navigation from "components/molecules/Navigation/Navigation";
+import Navigation from "components/molecules/Navigation/HamburgerNavigation";
 import { NavLink } from "react-router-dom";
 import HamburgerModal from "components/molecules/HamburgerModal/HamburgerModal";
 import { useSelector } from "react-redux";
