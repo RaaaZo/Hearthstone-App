@@ -56,13 +56,12 @@ const LandingPageDesc = () => {
     <Wrapper>
       <HeroWrapper />
       <StyledParagraph>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, itaque
-        veritatis! Temporibus eum, vel iusto deserunt, repudiandae inventore hic
-        assumenda ratione pariatur quas facere quo! Sint nostrum blanditiis
-        dolorum sit labore veniam hic, temporibus ut natus commodi aliquam ad
-        corporis cum amet! Eos sunt labore, inventore maxime natus voluptatibus
-        aspernatur illo sed ut delectus nulla consectetur cumque unde nobis
-        excepturi.
+        W bazie danych są karty od wersji klasycznej gry Hearthstone, aż do
+        najnowszego dodatku. Każda karta posiada pełen opis jak i smaczki takie
+        jak artysta, który stworzył daną kartę jak i teksty, które wypowiada
+        wybrana karta podczas zagrania. Poniżej znajduje się przykładowa karta
+        jaką jest wszystkim znana Ysera z dokładnym opisem znajdującym się
+        poniżej karty.
       </StyledParagraph>
     </Wrapper>
   );

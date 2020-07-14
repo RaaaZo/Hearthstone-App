@@ -42,7 +42,7 @@ const CardDesc = () => {
 
   return (
     <Wrapper>
-      <StyledHeader>Opis przykładowej karty :</StyledHeader>
+      <StyledHeader>Opis karty :</StyledHeader>
       {isLoading ? (
         <img src={loadingIndicator} alt='' />
       ) : (
@@ -78,6 +78,9 @@ const CardDesc = () => {
               </StyledParagraph>
               <StyledParagraph>
                 Opis: <StyledSpan>{item.flavor}</StyledSpan>
+              </StyledParagraph>
+              <StyledParagraph>
+                Autor: <StyledSpan>{item.artist}</StyledSpan>
               </StyledParagraph>
             </Fragment>
           );

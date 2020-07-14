@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import Button from "components/atoms/Button/Button";
 import { Link } from "react-router-dom";
 import Image from "components/atoms/Image/Image";
