@@ -1,32 +1,32 @@
 import {
-  FETCH_ALL_CARDS_REQUEST,
-  FETCH_ALL_CARDS_SUCCESS,
-  FETCH_ALL_CARDS_FAILURE,
+  FETCH_THE_UNGORO_SET_REQUEST,
+  FETCH_THE_UNGORO_SET_SUCCESS,
+  FETCH_THE_UNGORO_SET_FAILURE,
 } from 'ducks/constants/FetchConstants';
 
 const initialState = {
   loading: true,
-  AllCardsData: [],
+  CardsData: [],
   error: '',
 };
 
-const fetchAllCardsReducer = (state = initialState, action) => {
+const fetchUngoroSet = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_ALL_CARDS_REQUEST:
+    case FETCH_THE_UNGORO_SET_REQUEST:
       return {
         ...state,
         loading: true,
       };
-    case FETCH_ALL_CARDS_SUCCESS:
+    case FETCH_THE_UNGORO_SET_SUCCESS:
       return {
         loading: false,
-        AllCardsData: action.payload,
+        CardsData: action.payload,
         error: '',
       };
-    case FETCH_ALL_CARDS_FAILURE:
+    case FETCH_THE_UNGORO_SET_FAILURE:
       return {
         loading: false,
-        AllCardsData: [],
+        CardsData: [],
         error: action.payload,
       };
     default:
@@ -34,4 +34,4 @@ const fetchAllCardsReducer = (state = initialState, action) => {
   }
 };
 
-export default fetchAllCardsReducer;
+export default fetchUngoroSet;

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Modal = styled.div`
   position: fixed;
@@ -7,6 +7,7 @@ const Modal = styled.div`
   width: 100%;
   height: 100%;
   background-color: transparent;
+  z-index: 10;
 `;
 
 export default Modal;

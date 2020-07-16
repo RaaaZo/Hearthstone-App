@@ -1,9 +1,9 @@
-import axios from "axios";
+import axios from 'axios';
 import {
   FETCH_ALL_CARDS_REQUEST,
   FETCH_ALL_CARDS_SUCCESS,
   FETCH_ALL_CARDS_FAILURE,
-} from "ducks/constants/FetchConstants";
+} from 'ducks/constants/FetchConstants';
 
 export const fetchAllCardsRequest = () => {
   return {
@@ -29,16 +29,17 @@ export const fetchAllCards = () => {
   return (dispatch) => {
     dispatch(fetchAllCardsRequest());
     axios({
-      method: "GET",
-      url: "https://omgvamp-hearthstone-v1.p.rapidapi.com/info",
+      method: 'GET',
+      url: 'https://omgvamp-hearthstone-v1.p.rapidapi.com/cards',
       headers: {
-        "content-type": "application/octet-stream",
-        "x-rapidapi-host": "omgvamp-hearthstone-v1.p.rapidapi.com",
-        "x-rapidapi-key": process.env.REACT_APP_API_KEY,
+        'content-type': 'application/octet-stream',
+        'x-rapidapi-host': 'omgvamp-hearthstone-v1.p.rapidapi.com',
+        'x-rapidapi-key': process.env.REACT_APP_API_KEY,
         useQueryString: true,
       },
       params: {
-        locale: "plPL",
+        locale: 'plPL',
+        collectible: '1',
       },
     })
       .then((response) => {

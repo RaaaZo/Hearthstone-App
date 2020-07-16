@@ -1,36 +1,36 @@
 import axios from 'axios';
 import {
-  FETCH_ONE_CARD_REQUEST,
-  FETCH_ONE_CARD_SUCCESS,
-  FETCH_ONE_CARD_FAILURE,
+  FETCH_BASIC_SET_REQUEST,
+  FETCH_BASIC_SET_SUCCESS,
+  FETCH_BASIC_SET_FAILURE,
 } from 'ducks/constants/FetchConstants';
 
-export const fetchOneCardRequest = () => {
+export const fetchBasicSetRequest = () => {
   return {
-    type: FETCH_ONE_CARD_REQUEST,
+    type: FETCH_BASIC_SET_REQUEST,
   };
 };
 
-export const fetchOneCardSuccess = (data) => {
+export const fetchBasicSetSuccess = (data) => {
   return {
-    type: FETCH_ONE_CARD_SUCCESS,
+    type: FETCH_BASIC_SET_SUCCESS,
     payload: data,
   };
 };
 
-export const fetchOneCardFailure = (error) => {
+export const fetchBasicSetFailure = (error) => {
   return {
-    type: FETCH_ONE_CARD_FAILURE,
+    type: FETCH_BASIC_SET_FAILURE,
     payload: error,
   };
 };
 
-export const fetchOneCard = () => {
+export const fetchBasicSet = () => {
   return (dispatch) => {
-    dispatch(fetchOneCardRequest());
+    dispatch(fetchBasicSetRequest());
     axios({
       method: 'GET',
-      url: 'https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/Ysera',
+      url: 'https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/sets/Basic',
       headers: {
         'content-type': 'application/octet-stream',
         'x-rapidapi-host': 'omgvamp-hearthstone-v1.p.rapidapi.com',
@@ -39,16 +39,17 @@ export const fetchOneCard = () => {
       },
       params: {
         locale: 'plPL',
+        collectible: '1',
       },
     })
       .then((response) => {
         // response.data is the OneCard
         const cardData = response.data;
-        dispatch(fetchOneCardSuccess(cardData));
+        dispatch(fetchBasicSetSuccess(cardData));
       })
       .catch((error) => {
         // error.message is the error message
-        dispatch(fetchOneCardFailure(error.message));
+        dispatch(fetchBasicSetFailure(error.message));
       });
   };
 };

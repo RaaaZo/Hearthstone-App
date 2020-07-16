@@ -1,36 +1,37 @@
 import axios from 'axios';
 import {
-  FETCH_ONE_CARD_REQUEST,
-  FETCH_ONE_CARD_SUCCESS,
-  FETCH_ONE_CARD_FAILURE,
+  FETCH_THE_FROZEN_THRONE_SET_REQUEST,
+  FETCH_THE_FROZEN_THRONE_SET_SUCCESS,
+  FETCH_THE_FROZEN_THRONE_SET_FAILURE,
 } from 'ducks/constants/FetchConstants';
 
-export const fetchOneCardRequest = () => {
+export const fetchFrozenThroneRequest = () => {
   return {
-    type: FETCH_ONE_CARD_REQUEST,
+    type: FETCH_THE_FROZEN_THRONE_SET_REQUEST,
   };
 };
 
-export const fetchOneCardSuccess = (data) => {
+export const fetchFrozenThroneSuccess = (data) => {
   return {
-    type: FETCH_ONE_CARD_SUCCESS,
+    type: FETCH_THE_FROZEN_THRONE_SET_SUCCESS,
     payload: data,
   };
 };
 
-export const fetchOneCardFailure = (error) => {
+export const fetchFrozenThroneFailure = (error) => {
   return {
-    type: FETCH_ONE_CARD_FAILURE,
+    type: FETCH_THE_FROZEN_THRONE_SET_FAILURE,
     payload: error,
   };
 };
 
-export const fetchOneCard = () => {
+export const fetchFrozenThrone = () => {
   return (dispatch) => {
-    dispatch(fetchOneCardRequest());
+    dispatch(fetchFrozenThroneRequest());
     axios({
       method: 'GET',
-      url: 'https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/Ysera',
+      url:
+        'https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/sets/Goblins vs Gnomes',
       headers: {
         'content-type': 'application/octet-stream',
         'x-rapidapi-host': 'omgvamp-hearthstone-v1.p.rapidapi.com',
@@ -39,16 +40,17 @@ export const fetchOneCard = () => {
       },
       params: {
         locale: 'plPL',
+        collectible: '1',
       },
     })
       .then((response) => {
         // response.data is the OneCard
         const cardData = response.data;
-        dispatch(fetchOneCardSuccess(cardData));
+        dispatch(fetchFrozenThroneSuccess(cardData));
       })
       .catch((error) => {
         // error.message is the error message
-        dispatch(fetchOneCardFailure(error.message));
+        dispatch(fetchFrozenThroneFailure(error.message));
       });
   };
 };

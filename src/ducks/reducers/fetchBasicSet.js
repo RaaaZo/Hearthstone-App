@@ -1,32 +1,32 @@
 import {
-  FETCH_ALL_CARDS_REQUEST,
-  FETCH_ALL_CARDS_SUCCESS,
-  FETCH_ALL_CARDS_FAILURE,
+  FETCH_BASIC_SET_FAILURE,
+  FETCH_BASIC_SET_SUCCESS,
+  FETCH_BASIC_SET_REQUEST,
 } from 'ducks/constants/FetchConstants';
 
 const initialState = {
   loading: true,
-  AllCardsData: [],
+  BasicCardsData: [],
   error: '',
 };
 
-const fetchAllCardsReducer = (state = initialState, action) => {
+const fetchBasicSet = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_ALL_CARDS_REQUEST:
+    case FETCH_BASIC_SET_REQUEST:
       return {
         ...state,
         loading: true,
       };
-    case FETCH_ALL_CARDS_SUCCESS:
+    case FETCH_BASIC_SET_SUCCESS:
       return {
         loading: false,
-        AllCardsData: action.payload,
+        BasicCardsData: action.payload,
         error: '',
       };
-    case FETCH_ALL_CARDS_FAILURE:
+    case FETCH_BASIC_SET_FAILURE:
       return {
         loading: false,
-        AllCardsData: [],
+        BasicCardsData: [],
         error: action.payload,
       };
     default:
@@ -34,4 +34,4 @@ const fetchAllCardsReducer = (state = initialState, action) => {
   }
 };
 
-export default fetchAllCardsReducer;
+export default fetchBasicSet;
