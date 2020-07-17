@@ -15,11 +15,11 @@ const Wrapper = styled.div`
   margin: 0 20px;
 `;
 
-const UngoroExpansion = () => {
+const NaxxramasExpansion = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchExpansionsSet(`Journey to Un'Goro`, 'ungoro'));
+    dispatch(fetchExpansionsSet('Naxxramas', 'naxxramas'));
   }, []);
 
   return (
@@ -31,4 +31,4 @@ const UngoroExpansion = () => {
   );
 };
 
-export default UngoroExpansion;
+export default NaxxramasExpansion;

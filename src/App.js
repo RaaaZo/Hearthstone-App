@@ -10,6 +10,7 @@ import ChampionSkins from 'pages/ChampionSkins';
 import HomePage from 'pages/HomePage';
 import Expansions from 'pages/Expansions/BasicExpansion';
 import GoblinsExpansion from 'pages/Expansions/GoblinsExpansion';
+import NaxxramasExpansion from 'pages/Expansions/NaxxramasExpansion';
 import BlackrockMountainExpansion from 'pages/Expansions/BlackrockMountainExpansion';
 import GrandTournamentExpansion from 'pages/Expansions/GrandTournamentExpansion';
 import LeagueOfExplorersExpansion from 'pages/Expansions/LeagueOfExplorersExpansion';
@@ -35,6 +36,7 @@ function App() {
             path='/goblins_vs_gnomes_expansion'
             component={GoblinsExpansion}
           />
+          <Route exact path='/naxxramas' component={NaxxramasExpansion} />
           <Route
             exact
             path='/blackrock_mountain'

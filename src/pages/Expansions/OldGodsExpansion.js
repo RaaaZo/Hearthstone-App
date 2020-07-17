@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import HeroImg from 'components/organisms/ExpansionsPage/HeroImg';
+import BasicCards from 'components/organisms/ExpansionsPage/SetsOfCards/BasicCards';
 import { useDispatch } from 'react-redux';
-import { fetchOldGodsSet } from 'ducks/actions/fetchOldGodsSet';
+import { fetchExpansionsSet } from 'ducks/actions/fetchExpansionsSet';
+
 import styled from 'styled-components';
 import Filters from 'components/organisms/ExpansionsPage/Filters';
-import OldGodsCards from 'components/organisms/ExpansionsPage/SetsOfCards/OldGodsCards';
 
 const Wrapper = styled.div`
   display: flex;
@@ -18,14 +19,14 @@ const OldGodsExpansion = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchOldGodsSet());
+    dispatch(fetchExpansionsSet('Whispers of the Old Gods', 'oldGods'));
   }, []);
 
   return (
     <Wrapper>
       <HeroImg />
       <Filters />
-      <OldGodsCards />
+      <BasicCards />
     </Wrapper>
   );
 };

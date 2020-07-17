@@ -6,7 +6,7 @@ import loadingIndicator from 'Assets/images/loadingIndicator.svg';
 import Header from 'components/atoms/Header/Header';
 
 const Cards = () => {
-  const isLoading = useSelector((state) => state.fetchBasicSet.loading);
+  const isLoading = useSelector((state) => state.fetchExpansionsSet.loading);
 
   return (
     <>

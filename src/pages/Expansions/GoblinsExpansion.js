@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import HeroImg from 'components/organisms/ExpansionsPage/HeroImg';
-import NaxxramasCards from 'components/organisms/ExpansionsPage/SetsOfCards/GoblinsCards';
+import BasicCards from 'components/organisms/ExpansionsPage/SetsOfCards/BasicCards';
 import { useDispatch } from 'react-redux';
-import { fetchNaxxramasSet } from 'ducks/actions/fetchGoblinsVsGnomesSet';
+import { fetchExpansionsSet } from 'ducks/actions/fetchExpansionsSet';
+
 import styled from 'styled-components';
 import Filters from 'components/organisms/ExpansionsPage/Filters';
 
@@ -14,20 +15,20 @@ const Wrapper = styled.div`
   margin: 0 20px;
 `;
 
-const Expansions = () => {
+const GoblinsExpansion = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchNaxxramasSet());
+    dispatch(fetchExpansionsSet('Goblins vs Gnomes', 'goblins'));
   }, []);
 
   return (
     <Wrapper>
       <HeroImg />
       <Filters />
-      <NaxxramasCards />
+      <BasicCards />
     </Wrapper>
   );
 };
 
-export default Expansions;
+export default GoblinsExpansion;

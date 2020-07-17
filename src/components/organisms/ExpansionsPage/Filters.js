@@ -99,6 +99,7 @@ const Filters = () => {
           <StyledListItems>Shaman</StyledListItems>
           <StyledListItems>Warlock</StyledListItems>
           <StyledListItems>Warrior</StyledListItems>
+          <StyledListItems>Neutralne</StyledListItems>
         </StyledClassUl>
       </div>
 
@@ -111,6 +112,11 @@ const Filters = () => {
             onClick={() => handleCloseDispatchAndPushRoute('expansions')}
           >
             Podstawowe
+          </StyledListItems>
+          <StyledListItems
+            onClick={() => handleCloseDispatchAndPushRoute('naxxramas')}
+          >
+            Naxxramas
           </StyledListItems>
           <StyledListItems
             onClick={() =>

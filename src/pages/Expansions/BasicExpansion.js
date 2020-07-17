@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import HeroImg from 'components/organisms/ExpansionsPage/HeroImg';
 import BasicCards from 'components/organisms/ExpansionsPage/SetsOfCards/BasicCards';
 import { useDispatch } from 'react-redux';
-import { fetchBasicSet } from 'ducks/actions/fetchBasicSet';
+import { fetchExpansionsSet } from 'ducks/actions/fetchExpansionsSet';
 
 import styled from 'styled-components';
 import Filters from 'components/organisms/ExpansionsPage/Filters';
@@ -19,7 +19,7 @@ const Expansions = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchBasicSet());
+    dispatch(fetchExpansionsSet('Basic', 'basic'));
   }, []);
 
   return (

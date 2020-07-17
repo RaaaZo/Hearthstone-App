@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import HeroImg from 'components/organisms/ExpansionsPage/HeroImg';
-import FrozenThroneCards from 'components/organisms/ExpansionsPage/SetsOfCards/FrozenThroneCards';
+import BasicCards from 'components/organisms/ExpansionsPage/SetsOfCards/BasicCards';
 import { useDispatch } from 'react-redux';
-import { fetchFrozenThrone } from 'ducks/actions/fetchFrozenThroneSet';
+import { fetchExpansionsSet } from 'ducks/actions/fetchExpansionsSet';
 
 import styled from 'styled-components';
 import Filters from 'components/organisms/ExpansionsPage/Filters';
@@ -19,14 +19,16 @@ const FrozenThroneExpansion = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchFrozenThrone());
+    dispatch(
+      fetchExpansionsSet('Knights of the Frozen Throne', 'frozenThrone')
+    );
   }, []);
 
   return (
     <Wrapper>
       <HeroImg />
       <Filters />
-      <FrozenThroneCards />
+      <BasicCards />
     </Wrapper>
   );
 };

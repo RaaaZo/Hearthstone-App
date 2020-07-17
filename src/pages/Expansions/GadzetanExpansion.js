@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import HeroImg from 'components/organisms/ExpansionsPage/HeroImg';
-import GadzetanCards from 'components/organisms/ExpansionsPage/SetsOfCards/GadzetanCards';
+import BasicCards from 'components/organisms/ExpansionsPage/SetsOfCards/BasicCards';
 import { useDispatch } from 'react-redux';
-import { fetchGadzetanSet } from 'ducks/actions/fetchGadzetanSet';
+import { fetchExpansionsSet } from 'ducks/actions/fetchExpansionsSet';
 
 import styled from 'styled-components';
 import Filters from 'components/organisms/ExpansionsPage/Filters';
@@ -19,14 +19,14 @@ const GadzetanExpansion = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchGadzetanSet());
+    dispatch(fetchExpansionsSet('Mean Streets of Gadgetzan', 'gadzetan'));
   }, []);
 
   return (
     <Wrapper>
       <HeroImg />
       <Filters />
-      <GadzetanCards />
+      <BasicCards />
     </Wrapper>
   );
 };

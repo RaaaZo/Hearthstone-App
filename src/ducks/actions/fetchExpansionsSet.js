@@ -5,32 +5,38 @@ import {
   FETCH_BASIC_SET_FAILURE,
 } from 'ducks/constants/FetchConstants';
 
-export const fetchBasicSetRequest = () => {
+export const fetchExpansionsSetRequest = () => {
   return {
     type: FETCH_BASIC_SET_REQUEST,
   };
 };
 
-export const fetchBasicSetSuccess = (data) => {
+export const fetchExpansionsSetSuccess = (data, setOfCards) => {
   return {
     type: FETCH_BASIC_SET_SUCCESS,
-    payload: data,
+    payload: {
+      data,
+      setOfCards,
+    },
   };
 };
 
-export const fetchBasicSetFailure = (error) => {
+export const fetchExpansionsSetFailure = (error, setOfCards) => {
   return {
     type: FETCH_BASIC_SET_FAILURE,
-    payload: error,
+    payload: {
+      error,
+      setOfCards,
+    },
   };
 };
 
-export const fetchBasicSet = () => {
+export const fetchExpansionsSet = (expansion, setOfCards) => {
   return (dispatch) => {
-    dispatch(fetchBasicSetRequest());
+    dispatch(fetchExpansionsSetRequest());
     axios({
       method: 'GET',
-      url: 'https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/sets/Basic',
+      url: `https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/sets/${expansion}`,
       headers: {
         'content-type': 'application/octet-stream',
         'x-rapidapi-host': 'omgvamp-hearthstone-v1.p.rapidapi.com',
@@ -45,11 +51,11 @@ export const fetchBasicSet = () => {
       .then((response) => {
         // response.data is the OneCard
         const cardData = response.data;
-        dispatch(fetchBasicSetSuccess(cardData));
+        dispatch(fetchExpansionsSetSuccess(cardData, setOfCards));
       })
       .catch((error) => {
         // error.message is the error message
-        dispatch(fetchBasicSetFailure(error.message));
+        dispatch(fetchExpansionsSetFailure(error.message, setOfCards));
       });
   };
 };

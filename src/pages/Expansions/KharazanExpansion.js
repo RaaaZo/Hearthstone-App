@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import HeroImg from 'components/organisms/ExpansionsPage/HeroImg';
-import KharazanCards from 'components/organisms/ExpansionsPage/SetsOfCards/KharazanCards';
+import BasicCards from 'components/organisms/ExpansionsPage/SetsOfCards/BasicCards';
 import { useDispatch } from 'react-redux';
-import { fetchKharazanSet } from 'ducks/actions/fetchKharazanSet';
+import { fetchExpansionsSet } from 'ducks/actions/fetchExpansionsSet';
 
 import styled from 'styled-components';
 import Filters from 'components/organisms/ExpansionsPage/Filters';
@@ -19,14 +19,14 @@ const KharazanExpansion = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchKharazanSet());
+    dispatch(fetchExpansionsSet('One Night in Karazhan', 'kharazan'));
   }, []);
 
   return (
     <Wrapper>
       <HeroImg />
       <Filters />
-      <KharazanCards />
+      <BasicCards />
     </Wrapper>
   );
 };

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import HeroImg from 'components/organisms/ExpansionsPage/HeroImg';
-import BlackrockCards from 'components/organisms/ExpansionsPage/SetsOfCards/BlackrockCards';
+import BasicCards from 'components/organisms/ExpansionsPage/SetsOfCards/BasicCards';
 import { useDispatch } from 'react-redux';
-import { fetchBlackrockSet } from 'ducks/actions/fetchBlackrockSet';
+import { fetchExpansionsSet } from 'ducks/actions/fetchExpansionsSet';
 
 import styled from 'styled-components';
 import Filters from 'components/organisms/ExpansionsPage/Filters';
@@ -19,14 +19,14 @@ const BlackrockMountainExpansion = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchBlackrockSet());
+    dispatch(fetchExpansionsSet('Blackrock Mountain', 'blackrock'));
   }, []);
 
   return (
     <Wrapper>
       <HeroImg />
       <Filters />
-      <BlackrockCards />
+      <BasicCards />
     </Wrapper>
   );
 };

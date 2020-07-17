@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import HeroImg from 'components/organisms/ExpansionsPage/HeroImg';
-import GrandTournamentCards from 'components/organisms/ExpansionsPage/SetsOfCards/GrandTournamentCards';
+import BasicCards from 'components/organisms/ExpansionsPage/SetsOfCards/BasicCards';
 import { useDispatch } from 'react-redux';
-import { fetchGrandTournamentSet } from 'ducks/actions/fetchGrandTournamentSet';
+import { fetchExpansionsSet } from 'ducks/actions/fetchExpansionsSet';
 
 import styled from 'styled-components';
 import Filters from 'components/organisms/ExpansionsPage/Filters';
@@ -19,14 +19,14 @@ const GrandTournamentExpansion = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchGrandTournamentSet());
+    dispatch(fetchExpansionsSet('The Grand Tournament', 'tournament'));
   }, []);
 
   return (
     <Wrapper>
       <HeroImg />
       <Filters />
-      <GrandTournamentCards />
+      <BasicCards />
     </Wrapper>
   );
 };

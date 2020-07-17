@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import HeroImg from 'components/organisms/ExpansionsPage/HeroImg';
+import BasicCards from 'components/organisms/ExpansionsPage/SetsOfCards/BasicCards';
 import { useDispatch } from 'react-redux';
-import { fetchLeagueOfExplorersSet } from 'ducks/actions/fetchLeagueOfExplorersSet';
+import { fetchExpansionsSet } from 'ducks/actions/fetchExpansionsSet';
 
 import styled from 'styled-components';
 import Filters from 'components/organisms/ExpansionsPage/Filters';
-import ExplorersCards from 'components/organisms/ExpansionsPage/SetsOfCards/ExplorersCards';
 
 const Wrapper = styled.div`
   display: flex;
@@ -19,14 +19,14 @@ const LeagueOfExplorersExpansion = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchLeagueOfExplorersSet());
+    dispatch(fetchExpansionsSet('The League of Explorers', 'explorers'));
   }, []);
 
   return (
     <Wrapper>
       <HeroImg />
       <Filters />
-      <ExplorersCards />
+      <BasicCards />
     </Wrapper>
   );
 };
