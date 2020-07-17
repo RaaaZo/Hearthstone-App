@@ -11,10 +11,19 @@ import HomePage from 'pages/HomePage';
 import Expansions from 'pages/Expansions/BasicExpansion';
 import GoblinsExpansion from 'pages/Expansions/GoblinsExpansion';
 import BlackrockMountainExpansion from 'pages/Expansions/BlackrockMountainExpansion';
+import GrandTournamentExpansion from 'pages/Expansions/GrandTournamentExpansion';
+import LeagueOfExplorersExpansion from 'pages/Expansions/LeagueOfExplorersExpansion';
+import OldGodsExpansion from 'pages/Expansions/OldGodsExpansion';
+import KharazanExpansion from 'pages/Expansions/KharazanExpansion';
+import GadzetanExpansion from 'pages/Expansions/GadzetanExpansion';
+import UngoroExpansion from 'pages/Expansions/UngoroExpansion';
+import FrozenThroneExpansion from 'pages/Expansions/FrozenThroneExpansion';
+import ScrollToTop from 'components/atoms/ScrollToTop/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <MainTemplate>
         <Switch>
           <Route exact path='/' component={LandingPage} />
@@ -31,6 +40,34 @@ function App() {
             path='/blackrock_mountain'
             component={BlackrockMountainExpansion}
           />
+          <Route
+            exact
+            path='/grand_tournament'
+            component={GrandTournamentExpansion}
+          />
+          <Route
+            exact
+            path='/league_of_explorers'
+            component={LeagueOfExplorersExpansion}
+          />
+          <Route exact path='/old_gods' component={OldGodsExpansion} />
+          <Route
+            exact
+            path='/one_night_in_kharazan'
+            component={KharazanExpansion}
+          />
+          <Route
+            exact
+            path='/mean_streets_of_gadzetan'
+            component={GadzetanExpansion}
+          />
+          <Route exact path='/journey_to_ungoro' component={UngoroExpansion} />
+          <Route
+            exact
+            path='/knights_of_the_frozen_throne'
+            component={FrozenThroneExpansion}
+          />
+
           <Route exact path='/typesOfCards' component={TypesOfCardsPage} />
           <Route exact path='/races' component={RacesPage} />
           <Route exact path='/qualityOfCards' component={QualityOfCards} />

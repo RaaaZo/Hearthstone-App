@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import styled, { css } from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 const Wrapper = styled.div`
   display: none;
@@ -14,6 +14,7 @@ const Wrapper = styled.div`
 `;
 
 const StyledNavLinks = styled(NavLink)`
+  position: relative;
   color: ${({ theme }) => theme.darkModeTxt};
   padding: 25px;
   text-decoration: none;
@@ -24,7 +25,9 @@ const Navigation = () => {
   return (
     <Wrapper>
       <StyledNavLinks to='/classes'>Klasy kart</StyledNavLinks>
-      <StyledNavLinks to='/expansions'>Ekspansje</StyledNavLinks>
+      <StyledNavLinks modal to='/expansions'>
+        Ekspansje
+      </StyledNavLinks>
       <StyledNavLinks to='/championSkins'>Skórki Bohaterów</StyledNavLinks>
       <StyledNavLinks to='/typesOfCards'>Typy kart</StyledNavLinks>
       <StyledNavLinks to='/races'>Rasy</StyledNavLinks>

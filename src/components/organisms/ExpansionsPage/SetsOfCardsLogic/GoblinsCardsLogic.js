@@ -16,7 +16,6 @@ const GoblinsCardsLogic = ({ cardPlayerClass }) => {
       <Wrapper>
         {data
           .filter((card) => card.playerClass === cardPlayerClass)
-          .slice(1)
           .map((item) => (
             <InnerWrapper key={item.cardId}>
               <StyledParagraph>{item.name}</StyledParagraph>

@@ -1,28 +1,40 @@
 const initialState = {
   isOpen: false,
-  isOpenFilter: false,
+  isOpenCardSetFilter: false,
+  isOpenClassFilter: false,
 };
 
 const modalReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'TOGGLE_MODAL':
       return {
+        ...state,
         isOpen: !state.isOpen,
       };
 
     case 'CLOSE_MODAL':
       return {
+        ...state,
         isOpen: false,
       };
 
     case 'TOGGLE_FILTER_MODAL':
       return {
-        isOpenFilter: !state.isOpenFilter,
+        ...state,
+        isOpenCardSetFilter: !state.isOpenCardSetFilter,
       };
 
     case 'CLOSE_FILTER_MODAL':
       return {
-        isOpenFilter: false,
+        ...state,
+        isOpenCardSetFilter: false,
+        isOpenClassFilter: false,
+      };
+
+    case 'TOGGLE_CLASS_MODAL':
+      return {
+        ...state,
+        isOpenClassFilter: !state.isOpenClassFilter,
       };
 
     default:

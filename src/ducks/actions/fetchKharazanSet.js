@@ -31,7 +31,7 @@ export const fetchKharazanSet = () => {
     axios({
       method: 'GET',
       url:
-        'https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/sets/The League of Explorers',
+        'https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/sets/One Night in Karazhan',
       headers: {
         'content-type': 'application/octet-stream',
         'x-rapidapi-host': 'omgvamp-hearthstone-v1.p.rapidapi.com',

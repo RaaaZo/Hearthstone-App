@@ -30,7 +30,7 @@ export const fetchUngoroSet = () => {
     dispatch(fetchUngoroSetRequest());
     axios({
       method: 'GET',
-      url: 'https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/sets/Ungoro',
+      url: `https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/sets/Journey to Un'Goro`,
       headers: {
         'content-type': 'application/octet-stream',
         'x-rapidapi-host': 'omgvamp-hearthstone-v1.p.rapidapi.com',

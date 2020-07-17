@@ -5,8 +5,8 @@ import InnerWrapper from 'components/atoms/ExpansionAtoms/InnerWrapper';
 import StyledParagraph from 'components/atoms/ExpansionAtoms/StyledParagraph';
 import StyledHeader from 'components/atoms/ExpansionAtoms/StyledHeader';
 
-const BlackrockCardsLogic = ({ cardPlayerClass }) => {
-  const data = useSelector((state) => state.fetchBlackrockSet.CardsData);
+const GadzetanLogic = ({ cardPlayerClass }) => {
+  const data = useSelector((state) => state.fetchGadzetanSet.CardsData);
 
   return (
     <>
@@ -31,4 +31,4 @@ const BlackrockCardsLogic = ({ cardPlayerClass }) => {
   );
 };
 
-export default BlackrockCardsLogic;
+export default GadzetanLogic;

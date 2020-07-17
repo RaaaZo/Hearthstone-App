@@ -31,7 +31,7 @@ export const fetchFrozenThrone = () => {
     axios({
       method: 'GET',
       url:
-        'https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/sets/Goblins vs Gnomes',
+        'https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/sets/Knights of the Frozen Throne',
       headers: {
         'content-type': 'application/octet-stream',
         'x-rapidapi-host': 'omgvamp-hearthstone-v1.p.rapidapi.com',

@@ -4,7 +4,7 @@ import BlackrockCardsLogic from '../SetsOfCardsLogic/BlackrockLogic';
 import loadingIndicator from 'Assets/images/loadingIndicator.svg';
 import Header from 'components/atoms/Header/Header';
 
-const Blackrock = () => {
+const BlackrockCards = () => {
   const isLoading = useSelector((state) => state.fetchBlackrockSet.loading);
 
   return (
@@ -30,4 +30,4 @@ const Blackrock = () => {
   );
 };
 
-export default Blackrock;
+export default BlackrockCards;

@@ -7,7 +7,7 @@ import fetchGoblinsVsGnomesSet from './fetchGoblinsVsGnomesSet';
 import fetchFrozenThroneSet from './fetchFrozenThroneSet';
 import fetchUngoroSet from './fetchUngoroSet';
 import fetchOldGodsSet from './fetchOldGodsSet';
-import fetchLeagueOfExplorersSet from './fetchLeagueOfExplorersSet';
+import fetchExplorersSet from './fetchExplorersSet';
 import fetchKharazanSet from './fetchKharazanSet';
 import fetchGrandTournamentSet from './fetchGrandTournamentSet';
 import fetchGadzetanSet from './fetchGadzetanSet';
@@ -22,7 +22,7 @@ const rootReducer = combineReducers({
   fetchFrozenThroneSet,
   fetchUngoroSet,
   fetchOldGodsSet,
-  fetchLeagueOfExplorersSet,
+  fetchExplorersSet,
   fetchKharazanSet,
   fetchGrandTournamentSet,
   fetchGadzetanSet,

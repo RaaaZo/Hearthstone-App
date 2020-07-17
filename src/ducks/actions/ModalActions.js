@@ -16,6 +16,12 @@ export const toggleFilterModal = () => {
   };
 };
 
+export const toggleClassModal = () => {
+  return {
+    type: 'TOGGLE_CLASS_MODAL',
+  };
+};
+
 export const closeFilterModal = () => {
   return {
     type: 'CLOSE_FILTER_MODAL',

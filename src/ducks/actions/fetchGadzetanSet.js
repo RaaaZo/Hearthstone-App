@@ -5,29 +5,29 @@ import {
   FETCH_THE_GADZETAN_SET_FAILURE,
 } from 'ducks/constants/FetchConstants';
 
-export const fetchNaxxramasSetRequest = () => {
+export const fetchGadzetanSetRequest = () => {
   return {
     type: FETCH_THE_GADZETAN_SET_REQUEST,
   };
 };
 
-export const fetchNaxxramasSetSuccess = (data) => {
+export const fetchGadzetanSetSuccess = (data) => {
   return {
     type: FETCH_THE_GADZETAN_SET_SUCCESS,
     payload: data,
   };
 };
 
-export const fetchNaxxramasSetFailure = (error) => {
+export const fetchGadzetanSetFailure = (error) => {
   return {
     type: FETCH_THE_GADZETAN_SET_FAILURE,
     payload: error,
   };
 };
 
-export const fetchNaxxramasSet = () => {
+export const fetchGadzetanSet = () => {
   return (dispatch) => {
-    dispatch(fetchNaxxramasSetRequest());
+    dispatch(fetchGadzetanSetRequest());
     axios({
       method: 'GET',
       url:
@@ -46,11 +46,11 @@ export const fetchNaxxramasSet = () => {
       .then((response) => {
         // response.data is the OneCard
         const cardData = response.data;
-        dispatch(fetchNaxxramasSetSuccess(cardData));
+        dispatch(fetchGadzetanSetSuccess(cardData));
       })
       .catch((error) => {
         // error.message is the error message
-        dispatch(fetchNaxxramasSetFailure(error.message));
+        dispatch(fetchGadzetanSetFailure(error.message));
       });
   };
 };
