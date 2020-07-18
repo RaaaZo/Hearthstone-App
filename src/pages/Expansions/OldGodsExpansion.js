@@ -20,7 +20,7 @@ const OldGodsExpansion = () => {
 
   useEffect(() => {
     dispatch(fetchExpansionsSet('Whispers of the Old Gods', 'oldGods'));
-  }, []);
+  }, [dispatch]);
 
   return (
     <Wrapper>

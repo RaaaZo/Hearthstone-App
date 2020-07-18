@@ -12,7 +12,7 @@ const LandingPage = () => {
 
   useEffect(() => {
     dispatch(fetchOneCard());
-  }, []);
+  }, [dispatch]);
 
   return (
     <Wrapper>

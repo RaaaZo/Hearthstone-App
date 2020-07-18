@@ -20,7 +20,7 @@ const NaxxramasExpansion = () => {
 
   useEffect(() => {
     dispatch(fetchExpansionsSet('Naxxramas', 'naxxramas'));
-  }, []);
+  }, [dispatch]);
 
   return (
     <Wrapper>

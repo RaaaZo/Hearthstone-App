@@ -20,7 +20,7 @@ const GoblinsExpansion = () => {
 
   useEffect(() => {
     dispatch(fetchExpansionsSet('Goblins vs Gnomes', 'goblins'));
-  }, []);
+  }, [dispatch]);
 
   return (
     <Wrapper>

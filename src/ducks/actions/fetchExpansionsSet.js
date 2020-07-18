@@ -3,7 +3,17 @@ import {
   FETCH_BASIC_SET_REQUEST,
   FETCH_BASIC_SET_SUCCESS,
   FETCH_BASIC_SET_FAILURE,
+  FILTER_CARDS_BY_CLASS,
 } from 'ducks/constants/FetchConstants';
+
+export const filterCardsByClass = (className) => {
+  return {
+    type: FILTER_CARDS_BY_CLASS,
+    payload: {
+      className,
+    },
+  };
+};
 
 export const fetchExpansionsSetRequest = () => {
   return {

@@ -1,12 +1,13 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useRouteMatch } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   toggleFilterModal,
   toggleClassModal,
   closeFilterModal,
 } from 'ducks/actions/ModalActions';
+import { filterCardsByClass } from 'ducks/actions/fetchExpansionsSet';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -82,6 +83,8 @@ const Filters = () => {
     push(`/${url}`);
   };
 
+  const match = useRouteMatch();
+
   return (
     <Wrapper>
       <h3>Filtry :</h3>
@@ -90,16 +93,96 @@ const Filters = () => {
           Klasy
         </StyledHeader>
         <StyledClassUl isOpenClass={isOpenClassFilter}>
-          <StyledListItems>Druid</StyledListItems>
-          <StyledListItems>Hunter</StyledListItems>
-          <StyledListItems>Mage</StyledListItems>
-          <StyledListItems>Paladin</StyledListItems>
-          <StyledListItems>Priest</StyledListItems>
-          <StyledListItems>Rogue</StyledListItems>
-          <StyledListItems>Shaman</StyledListItems>
-          <StyledListItems>Warlock</StyledListItems>
-          <StyledListItems>Warrior</StyledListItems>
-          <StyledListItems>Neutralne</StyledListItems>
+          <StyledListItems
+            onClick={() => {
+              dispatch(filterCardsByClass('Druid'));
+              push(`${match.url}/druid`);
+              dispatch(closeFilterModal());
+            }}
+          >
+            Druid
+          </StyledListItems>
+          <StyledListItems
+            onClick={() => {
+              dispatch(filterCardsByClass('Hunter'));
+              push(`${match.url}/hunter`);
+              dispatch(closeFilterModal());
+            }}
+          >
+            Hunter
+          </StyledListItems>
+          <StyledListItems
+            onClick={() => {
+              dispatch(filterCardsByClass('Mage'));
+              push(`${match.url}/mage`);
+              dispatch(closeFilterModal());
+            }}
+          >
+            Mage
+          </StyledListItems>
+          <StyledListItems
+            onClick={() => {
+              dispatch(filterCardsByClass('Paladin'));
+              push(`${match.url}/paladin`);
+              dispatch(closeFilterModal());
+            }}
+          >
+            Paladin
+          </StyledListItems>
+          <StyledListItems
+            onClick={() => {
+              dispatch(filterCardsByClass('Priest'));
+              push(`${match.url}/priest`);
+              dispatch(closeFilterModal());
+            }}
+          >
+            Priest
+          </StyledListItems>
+          <StyledListItems
+            onClick={() => {
+              dispatch(filterCardsByClass('Rogue'));
+              push(`${match.url}/rogue`);
+              dispatch(closeFilterModal());
+            }}
+          >
+            Rogue
+          </StyledListItems>
+          <StyledListItems
+            onClick={() => {
+              dispatch(filterCardsByClass('Shaman'));
+              push(`${match.url}/shaman`);
+              dispatch(closeFilterModal());
+            }}
+          >
+            Shaman
+          </StyledListItems>
+          <StyledListItems
+            onClick={() => {
+              dispatch(filterCardsByClass('Warlock'));
+              push(`${match.url}/warlock`);
+              dispatch(closeFilterModal());
+            }}
+          >
+            Warlock
+          </StyledListItems>
+          <StyledListItems
+            onClick={() => {
+              dispatch(filterCardsByClass('Warrior'));
+              push(`${match.url}/warrior`);
+              dispatch(closeFilterModal());
+            }}
+          >
+            Warrior
+          </StyledListItems>
+          <StyledListItems
+            onClick={() => {
+              dispatch(filterCardsByClass('Neutral'));
+              push(`${match.url}/neutral`);
+              dispatch(closeFilterModal());
+            }}
+          >
+            Neutralne
+          </StyledListItems>
         </StyledClassUl>
       </div>
 

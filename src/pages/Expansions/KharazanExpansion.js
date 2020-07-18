@@ -20,7 +20,7 @@ const KharazanExpansion = () => {
 
   useEffect(() => {
     dispatch(fetchExpansionsSet('One Night in Karazhan', 'kharazan'));
-  }, []);
+  }, [dispatch]);
 
   return (
     <Wrapper>

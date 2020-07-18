@@ -2,6 +2,7 @@ import {
   FETCH_BASIC_SET_FAILURE,
   FETCH_BASIC_SET_SUCCESS,
   FETCH_BASIC_SET_REQUEST,
+  FILTER_CARDS_BY_CLASS,
 } from 'ducks/constants/FetchConstants';
 
 const initialState = {
@@ -17,6 +18,8 @@ const initialState = {
   gadzetonCardsData: [],
   ungoroCardsData: [],
   frozenThroneCardsData: [],
+  oneClassCards: [],
+  class: '',
   cardsLogic: '',
   error: '',
 };
@@ -28,6 +31,7 @@ const fetchExpansionsSet = (state = initialState, action) => {
         ...state,
         loading: true,
       };
+
     case FETCH_BASIC_SET_SUCCESS:
       return {
         ...state,
@@ -35,6 +39,7 @@ const fetchExpansionsSet = (state = initialState, action) => {
         [`${action.payload.setOfCards}CardsData`]: action.payload.data,
         cardsLogic: action.payload.setOfCards,
       };
+
     case FETCH_BASIC_SET_FAILURE:
       return {
         ...state,
@@ -42,6 +47,16 @@ const fetchExpansionsSet = (state = initialState, action) => {
         [`${action.payload.setOfCards}CardsData`]: [],
         error: action.payload,
         cardsLogic: '',
+      };
+
+    case FILTER_CARDS_BY_CLASS:
+      console.log(state.oneClassCards);
+      return {
+        ...state,
+        class: action.payload.className,
+        oneClassCards: state[`${state.cardsLogic}CardsData`].filter(
+          (item) => item.playerClass === action.payload.className
+        ),
       };
     default:
       return state;

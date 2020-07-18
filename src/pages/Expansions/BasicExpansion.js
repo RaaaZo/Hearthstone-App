@@ -20,7 +20,7 @@ const Expansions = () => {
 
   useEffect(() => {
     dispatch(fetchExpansionsSet('Basic', 'basic'));
-  }, []);
+  }, [dispatch]);
 
   return (
     <Wrapper>

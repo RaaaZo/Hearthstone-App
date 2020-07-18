@@ -20,7 +20,7 @@ const GrandTournamentExpansion = () => {
 
   useEffect(() => {
     dispatch(fetchExpansionsSet('The Grand Tournament', 'tournament'));
-  }, []);
+  }, [dispatch]);
 
   return (
     <Wrapper>

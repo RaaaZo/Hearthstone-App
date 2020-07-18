@@ -20,7 +20,7 @@ const GadzetanExpansion = () => {
 
   useEffect(() => {
     dispatch(fetchExpansionsSet('Mean Streets of Gadgetzan', 'gadzetan'));
-  }, []);
+  }, [dispatch]);
 
   return (
     <Wrapper>

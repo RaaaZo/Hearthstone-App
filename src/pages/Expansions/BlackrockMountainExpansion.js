@@ -20,7 +20,7 @@ const BlackrockMountainExpansion = () => {
 
   useEffect(() => {
     dispatch(fetchExpansionsSet('Blackrock Mountain', 'blackrock'));
-  }, []);
+  }, [dispatch]);
 
   return (
     <Wrapper>

@@ -20,7 +20,7 @@ const UngoroExpansion = () => {
 
   useEffect(() => {
     dispatch(fetchExpansionsSet(`Journey to Un'Goro`, 'ungoro'));
-  }, []);
+  }, [dispatch]);
 
   return (
     <Wrapper>

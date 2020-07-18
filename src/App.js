@@ -20,6 +20,7 @@ import GadzetanExpansion from 'pages/Expansions/GadzetanExpansion';
 import UngoroExpansion from 'pages/Expansions/UngoroExpansion';
 import FrozenThroneExpansion from 'pages/Expansions/FrozenThroneExpansion';
 import ScrollToTop from 'components/atoms/ScrollToTop/ScrollToTop';
+import FilteredExpansionByClassPage from 'pages/Expansions/FilteredExpansionByClassPage';
 
 function App() {
   return (
@@ -33,14 +34,34 @@ function App() {
           <Route exact path='/expansions' component={Expansions} />
           <Route
             exact
+            path='/expansions/:slug'
+            component={FilteredExpansionByClassPage}
+          />
+          <Route
+            exact
             path='/goblins_vs_gnomes_expansion'
             component={GoblinsExpansion}
+          />
+          <Route
+            exact
+            path='/goblins_vs_gnomes_expansion/:slug'
+            component={FilteredExpansionByClassPage}
           />
           <Route exact path='/naxxramas' component={NaxxramasExpansion} />
           <Route
             exact
+            path='/naxxramas/:slug'
+            component={FilteredExpansionByClassPage}
+          />
+          <Route
+            exact
             path='/blackrock_mountain'
             component={BlackrockMountainExpansion}
+          />
+          <Route
+            exact
+            path='/blackrock_mountain/:slug'
+            component={FilteredExpansionByClassPage}
           />
           <Route
             exact
@@ -49,10 +70,25 @@ function App() {
           />
           <Route
             exact
+            path='/grand_tournament/:slug'
+            component={FilteredExpansionByClassPage}
+          />
+          <Route
+            exact
             path='/league_of_explorers'
             component={LeagueOfExplorersExpansion}
           />
+          <Route
+            exact
+            path='/league_of_explorers/:slug'
+            component={FilteredExpansionByClassPage}
+          />
           <Route exact path='/old_gods' component={OldGodsExpansion} />
+          <Route
+            exact
+            path='/old_gods/:slug'
+            component={FilteredExpansionByClassPage}
+          />
           <Route
             exact
             path='/one_night_in_kharazan'
@@ -60,14 +96,34 @@ function App() {
           />
           <Route
             exact
+            path='/one_night_in_kharazan/:slug'
+            component={FilteredExpansionByClassPage}
+          />
+          <Route
+            exact
             path='/mean_streets_of_gadzetan'
             component={GadzetanExpansion}
+          />
+          <Route
+            exact
+            path='/mean_streets_of_gadzetan/:slug'
+            component={FilteredExpansionByClassPage}
           />
           <Route exact path='/journey_to_ungoro' component={UngoroExpansion} />
           <Route
             exact
+            path='/journey_to_ungoro/:slug'
+            component={FilteredExpansionByClassPage}
+          />
+          <Route
+            exact
             path='/knights_of_the_frozen_throne'
             component={FrozenThroneExpansion}
+          />
+          <Route
+            exact
+            path='/knights_of_the_frozen_throne/:slug'
+            component={FilteredExpansionByClassPage}
           />
 
           <Route exact path='/typesOfCards' component={TypesOfCardsPage} />

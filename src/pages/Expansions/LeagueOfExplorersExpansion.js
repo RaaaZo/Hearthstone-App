@@ -20,7 +20,7 @@ const LeagueOfExplorersExpansion = () => {
 
   useEffect(() => {
     dispatch(fetchExpansionsSet('The League of Explorers', 'explorers'));
-  }, []);
+  }, [dispatch]);
 
   return (
     <Wrapper>

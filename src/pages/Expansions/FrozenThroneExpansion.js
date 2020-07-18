@@ -22,7 +22,7 @@ const FrozenThroneExpansion = () => {
     dispatch(
       fetchExpansionsSet('Knights of the Frozen Throne', 'frozenThrone')
     );
-  }, []);
+  }, [dispatch]);
 
   return (
     <Wrapper>
