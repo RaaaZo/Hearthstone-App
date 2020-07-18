@@ -2,6 +2,7 @@ const initialState = {
   isOpen: false,
   isOpenCardSetFilter: false,
   isOpenClassFilter: false,
+  isOpenDetailsModal: false,
 };
 
 const modalReducer = (state = initialState, action) => {
@@ -35,6 +36,16 @@ const modalReducer = (state = initialState, action) => {
       return {
         ...state,
         isOpenClassFilter: !state.isOpenClassFilter,
+      };
+
+    case 'TOGGLE_CARD_DETAILS_MODAL':
+      return {
+        isOpenDetailsModal: !state.isOpenDetailsModal,
+      };
+
+    case 'CLOSE_CARD_DETAILS_MODAL':
+      return {
+        isOpenDetailsModal: false,
       };
 
     default:

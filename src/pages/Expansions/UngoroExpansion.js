@@ -6,6 +6,7 @@ import { fetchExpansionsSet } from 'ducks/actions/fetchExpansionsSet';
 
 import styled from 'styled-components';
 import Filters from 'components/organisms/ExpansionsPage/Filters';
+import CardTemplate from 'templates/CardTemplate';
 
 const Wrapper = styled.div`
   display: flex;
@@ -23,11 +24,13 @@ const UngoroExpansion = () => {
   }, [dispatch]);
 
   return (
-    <Wrapper>
-      <HeroImg />
-      <Filters />
-      <BasicCards />
-    </Wrapper>
+    <CardTemplate>
+      <Wrapper>
+        <HeroImg />
+        <Filters />
+        <BasicCards />
+      </Wrapper>
+    </CardTemplate>
   );
 };
 

@@ -26,10 +26,10 @@ const StyledNavLinks = styled(NavLink)`
 const Navigation = () => {
   return (
     <Wrapper>
-      <StyledNavLinks to='/classes'>Klasy kart</StyledNavLinks>
       <StyledNavLinks modal to='/expansions'>
-        Ekspansje
+        Dodatki
       </StyledNavLinks>
+      <StyledNavLinks to='/classes'>Klasy kart</StyledNavLinks>
       <StyledNavLinks to='/championSkins'>Skórki Bohaterów</StyledNavLinks>
       <StyledNavLinks to='/typesOfCards'>Typy kart</StyledNavLinks>
       <StyledNavLinks to='/races'>Rasy</StyledNavLinks>

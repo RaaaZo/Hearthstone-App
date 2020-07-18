@@ -1,11 +1,17 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Wrapper from 'components/atoms/ExpansionAtoms/Wrapper';
 import InnerWrapper from 'components/atoms/ExpansionAtoms/InnerWrapper';
 import StyledParagraph from 'components/atoms/ExpansionAtoms/StyledParagraph';
 import StyledHeader from 'components/atoms/ExpansionAtoms/StyledHeader';
+import {
+  getCardData,
+  toggleCardDetailsModal,
+} from 'ducks/actions/cardDetailsActions';
 
 const CardsLogic = ({ cardPlayerClass }) => {
+  const dispatch = useDispatch();
+
   const dataLogic = useSelector((state) => state.fetchExpansionsSet.cardsLogic);
   const data = useSelector(
     (state) => state.fetchExpansionsSet[`${dataLogic}CardsData`]
@@ -23,7 +29,13 @@ const CardsLogic = ({ cardPlayerClass }) => {
             .filter((card) => card.playerClass === cardPlayerClass)
             .slice(1)
             .map((item) => (
-              <InnerWrapper key={item.cardId}>
+              <InnerWrapper
+                onClick={() => {
+                  dispatch(getCardData(item.cardId));
+                  dispatch(toggleCardDetailsModal());
+                }}
+                key={item.cardId}
+              >
                 <StyledParagraph>{item.name}</StyledParagraph>
                 <StyledParagraph>{item.type}</StyledParagraph>
                 <img
@@ -38,7 +50,13 @@ const CardsLogic = ({ cardPlayerClass }) => {
           {data
             .filter((card) => card.playerClass === cardPlayerClass)
             .map((item) => (
-              <InnerWrapper key={item.cardId}>
+              <InnerWrapper
+                onClick={() => {
+                  dispatch(getCardData(item.cardId));
+                  dispatch(toggleCardDetailsModal());
+                }}
+                key={item.cardId}
+              >
                 <StyledParagraph>{item.name}</StyledParagraph>
                 <StyledParagraph>{item.type}</StyledParagraph>
                 <img

@@ -1,9 +1,9 @@
-import React from "react";
-import styled, { css } from "styled-components";
-import { NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { closeModal } from "ducks/actions/ModalActions";
+import React from 'react';
+import styled, { css } from 'styled-components';
+import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { closeModal } from 'ducks/actions/ModalActions';
 
 const Wrapper = styled.div`
   position: fixed;
@@ -62,11 +62,11 @@ const HamburgerModal = () => {
   return (
     <Wrapper isOpen={isOpen} onClick={(e) => e.stopPropagation()}>
       <InnerWrapper>
-        <StyledNavLinks onClick={() => dispatch(closeModal())} to='/classes'>
-          Klasy kart
-        </StyledNavLinks>
         <StyledNavLinks onClick={() => dispatch(closeModal())} to='/expansions'>
           Ekspansje
+        </StyledNavLinks>
+        <StyledNavLinks onClick={() => dispatch(closeModal())} to='/classes'>
+          Klasy kart
         </StyledNavLinks>
         <StyledNavLinks
           onClick={() => dispatch(closeModal())}

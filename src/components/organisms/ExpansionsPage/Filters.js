@@ -83,6 +83,7 @@ const StyledHeader = styled.h3`
     css`
       background-color: transparent;
       margin-top: 0;
+      cursor: default;
     `}
 
   @media(min-width: 768px) {

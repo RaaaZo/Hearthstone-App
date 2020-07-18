@@ -19,6 +19,7 @@ const initialState = {
   ungoroCardsData: [],
   frozenThroneCardsData: [],
   oneClassCards: [],
+  cardDetails: [],
   class: '',
   cardsLogic: '',
   error: '',
@@ -57,6 +58,16 @@ const fetchExpansionsSet = (state = initialState, action) => {
           (item) => item.playerClass === action.payload.className
         ),
       };
+
+    case 'GET_CARD_DATA':
+      console.log(action.payload.id);
+      return {
+        ...state,
+        cardDetails: state[`${state.cardsLogic}CardsData`].filter(
+          (item) => item.cardId === action.payload.id
+        ),
+      };
+
     default:
       return state;
   }

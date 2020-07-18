@@ -3,9 +3,9 @@ import HeroImg from 'components/organisms/ExpansionsPage/HeroImg';
 import BasicCards from 'components/organisms/ExpansionsPage/SetsOfCards/BasicCards';
 import { useDispatch } from 'react-redux';
 import { fetchExpansionsSet } from 'ducks/actions/fetchExpansionsSet';
-
 import styled from 'styled-components';
 import Filters from 'components/organisms/ExpansionsPage/Filters';
+import CardTemplate from 'templates/CardTemplate';
 
 const Wrapper = styled.div`
   display: flex;
@@ -23,11 +23,13 @@ const Expansions = () => {
   }, [dispatch]);
 
   return (
-    <Wrapper>
-      <HeroImg />
-      <Filters />
-      <BasicCards />
-    </Wrapper>
+    <CardTemplate>
+      <Wrapper>
+        <HeroImg />
+        <Filters />
+        <BasicCards />
+      </Wrapper>
+    </CardTemplate>
   );
 };
 

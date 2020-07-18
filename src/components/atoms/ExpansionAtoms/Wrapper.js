@@ -6,7 +6,6 @@ const Wrapper = styled.div`
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
 
   @media (min-width: 700px) {
     justify-content: space-around;

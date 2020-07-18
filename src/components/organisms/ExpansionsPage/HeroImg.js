@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  margin: 30px 0;
+  margin: 30px 20px;
 `;
 
 const HeroWrapper = styled.div`
