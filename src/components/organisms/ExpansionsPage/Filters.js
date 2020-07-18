@@ -12,12 +12,19 @@ import { filterCardsByClass } from 'ducks/actions/fetchExpansionsSet';
 const Wrapper = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
   max-width: 1280px;
   padding: 30px;
   background-color: ${({ theme: { classColors } }) => classColors.Hunter};
   border-radius: 15px;
+
+  @media (min-width: 560px) {
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
 `;
 
 const StyledCardSetUl = styled.ul`
@@ -49,7 +56,7 @@ const StyledClassUl = styled.ul`
 
 const StyledListItems = styled.li`
   width: 100%;
-  margin-top: 10px;
+  margin-top: 15px;
   padding: 10px;
   text-align: center;
   background-color: #a4508b;
@@ -61,10 +68,34 @@ const StyledListItems = styled.li`
 
 const StyledHeader = styled.h3`
   padding: 20px 40px;
+  margin-top: 30px;
   border-radius: 15px;
   text-align: center;
   background-color: ${({ theme }) => theme.darkBrown};
   cursor: pointer;
+
+  @media (min-width: 560px) {
+    margin-top: 0;
+  }
+
+  ${({ filter }) =>
+    filter &&
+    css`
+      background-color: transparent;
+      margin-top: 0;
+    `}
+
+  @media(min-width: 768px) {
+    padding: 20px 50px;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 20px 60px;
+  }
+
+  @media (min-width: 1440px) {
+    padding: 20px 70px;
+  }
 `;
 
 const Filters = () => {
@@ -87,7 +118,7 @@ const Filters = () => {
 
   return (
     <Wrapper>
-      <h3>Filtry :</h3>
+      <StyledHeader filter>Filtry :</StyledHeader>
       <div>
         <StyledHeader onClick={() => dispatch(toggleClassModal())}>
           Klasy

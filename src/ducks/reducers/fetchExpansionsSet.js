@@ -50,7 +50,6 @@ const fetchExpansionsSet = (state = initialState, action) => {
       };
 
     case FILTER_CARDS_BY_CLASS:
-      console.log(state.oneClassCards);
       return {
         ...state,
         class: action.payload.className,

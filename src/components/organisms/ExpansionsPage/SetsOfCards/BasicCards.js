@@ -7,6 +7,9 @@ import Header from 'components/atoms/Header/Header';
 
 const Cards = () => {
   const isLoading = useSelector((state) => state.fetchExpansionsSet.loading);
+  const expansionName = useSelector(
+    (state) => state.fetchExpansionsSet.cardsLogic
+  );
 
   return (
     <>
@@ -14,7 +17,7 @@ const Cards = () => {
         <img src={loadingIndicator} alt='spinner' />
       ) : (
         <>
-          <Header>Basic cards :</Header>
+          <Header>{expansionName.toUpperCase()} cards :</Header>
           <CardsLogic cardPlayerClass='Druid' />
           <CardsLogic cardPlayerClass='Hunter' />
           <CardsLogic cardPlayerClass='Mage' />

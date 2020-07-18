@@ -7,6 +7,7 @@ const Wrapper = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 60%;
+  z-index: 9999;
 
   @media (min-width: 1240px) {
     display: flex;
@@ -19,6 +20,7 @@ const StyledNavLinks = styled(NavLink)`
   padding: 25px;
   text-decoration: none;
   cursor: pointer;
+  z-index: 9999;
 `;
 
 const Navigation = () => {
