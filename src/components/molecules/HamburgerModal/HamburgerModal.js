@@ -15,6 +15,7 @@ const Wrapper = styled.div`
   box-shadow: 0px 5px 30px 0px black;
   transform: translateX(500px);
   transition: transform 0.3s 0.1s ease-in-out;
+  z-index: 9;
 
   ${({ isOpen }) =>
     isOpen &&
@@ -40,7 +41,6 @@ const InnerWrapper = styled.div`
   flex-flow: column;
   justify-content: space-around;
   align-items: center;
-
   @media (min-height: 1024px) {
     padding: 120px 0;
   }
@@ -49,7 +49,6 @@ const InnerWrapper = styled.div`
 const StyledNavLinks = styled(NavLink)`
   color: ${({ theme }) => theme.darkModeTxt};
   text-decoration: none;
-
   @media (min-width: 950px) {
     font-size: ${({ theme }) => theme.fontSize.xl};
   }

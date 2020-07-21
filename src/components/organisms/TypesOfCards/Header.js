@@ -2,6 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import heroImgQuality from "Assets/images/QualityOfCardsHero.jpg";
 import heroImgTypes from "Assets/images/typesOfCardsHero.jpg";
+import heroImgReverses from "Assets/images/CardReversesHero.jpg";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -28,7 +29,12 @@ const HeroWrapper = styled.div`
     qualityOfCards &&
     css`
       background-image: url(${heroImgQuality});
-      background-position: ;
+    `}
+
+  ${({ ReversesOfCards }) =>
+    ReversesOfCards &&
+    css`
+      background-image: url(${heroImgReverses});
     `}
 
   @media (min-width: 632px) {
@@ -45,10 +51,13 @@ const HeroWrapper = styled.div`
   }
 `;
 
-const TypesOfCardsHeader = ({ qualityOfCards }) => {
+const TypesOfCardsHeader = ({ qualityOfCards, ReversesOfCards }) => {
   return (
     <Wrapper>
-      <HeroWrapper qualityOfCards={qualityOfCards} />
+      <HeroWrapper
+        qualityOfCards={qualityOfCards}
+        ReversesOfCards={ReversesOfCards}
+      />
     </Wrapper>
   );
 };

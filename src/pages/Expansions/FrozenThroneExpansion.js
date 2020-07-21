@@ -1,37 +1,25 @@
-import React, { useEffect } from 'react';
-import HeroImg from 'components/organisms/ExpansionsPage/HeroImg';
-import BasicCards from 'components/organisms/ExpansionsPage/SetsOfCards/BasicCards';
-import { useDispatch } from 'react-redux';
-import { fetchExpansionsSet } from 'ducks/actions/fetchExpansionsSet';
-
-import styled from 'styled-components';
-import Filters from 'components/organisms/ExpansionsPage/Filters';
-import CardTemplate from 'templates/CardTemplate';
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  margin: 0 20px;
-`;
+import React, { useEffect } from "react";
+import HeroImg from "components/organisms/ExpansionsPage/HeroImg";
+import BasicCards from "components/organisms/ExpansionsPage/SetsOfCards/BasicCards";
+import { useDispatch } from "react-redux";
+import { fetchExpansionsSet } from "ducks/actions/fetchExpansionsSet";
+import Filters from "components/organisms/ExpansionsPage/Filters";
+import CardTemplate from "templates/CardTemplate";
 
 const FrozenThroneExpansion = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(
-      fetchExpansionsSet('Knights of the Frozen Throne', 'frozenThrone')
+      fetchExpansionsSet("Knights of the Frozen Throne", "frozenThrone")
     );
   }, [dispatch]);
 
   return (
     <CardTemplate>
-      <Wrapper>
-        <HeroImg />
-        <Filters />
-        <BasicCards />
-      </Wrapper>
+      <HeroImg />
+      <Filters />
+      <BasicCards />
     </CardTemplate>
   );
 };
