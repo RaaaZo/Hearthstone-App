@@ -1,7 +1,7 @@
-import React, { Fragment } from 'react';
-import styled from 'styled-components';
-import { useDispatch, useSelector } from 'react-redux';
-import { closeCardDetailsModal } from 'ducks/actions/cardDetailsActions';
+import React, { Fragment } from "react";
+import styled from "styled-components";
+import { useDispatch, useSelector } from "react-redux";
+import { closeCardDetailsModal } from "ducks/actions/cardDetailsActions";
 
 const Modal = styled.div`
   position: fixed;
@@ -19,7 +19,7 @@ const Wrapper = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   width: 90%;
-  margin: 0 10px;
+  margin: 0 auto;
   display: flex;
   flex-flow: row;
   justify-content: space-around;

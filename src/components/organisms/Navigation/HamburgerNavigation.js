@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import React from "react";
+import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 const Wrapper = styled.div`
   display: none;
@@ -29,10 +29,8 @@ const Navigation = () => {
       <StyledNavLinks modal to='/expansions'>
         Dodatki
       </StyledNavLinks>
-      <StyledNavLinks to='/classes'>Klasy kart</StyledNavLinks>
-      <StyledNavLinks to='/championSkins'>Skórki Bohaterów</StyledNavLinks>
+      <StyledNavLinks to='/cardBacks'>Rewersy kart</StyledNavLinks>
       <StyledNavLinks to='/typesOfCards'>Typy kart</StyledNavLinks>
-      <StyledNavLinks to='/races'>Rasy</StyledNavLinks>
       <StyledNavLinks to='/qualityOfCards'>Jakość kart</StyledNavLinks>
     </Wrapper>
   );

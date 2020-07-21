@@ -1,11 +1,11 @@
-import React from 'react';
-import Logo from 'components/atoms/Logo/Logo';
-import styled, { css } from 'styled-components';
-import HamburgerMenu from 'components/molecules/HamburgerMenu/HamburgerMenu';
-import Navigation from 'components/organisms/Navigation/HamburgerNavigation';
-import { NavLink } from 'react-router-dom';
-import HamburgerModal from 'components/molecules/HamburgerModal/HamburgerModal';
-import { useSelector } from 'react-redux';
+import React from "react";
+import Logo from "components/atoms/Logo/Logo";
+import styled, { css } from "styled-components";
+import HamburgerMenu from "components/molecules/HamburgerMenu/HamburgerMenu";
+import Navigation from "components/organisms/Navigation/HamburgerNavigation";
+import { NavLink } from "react-router-dom";
+import HamburgerModal from "components/molecules/HamburgerModal/HamburgerModal";
+import { useSelector } from "react-redux";
 
 const Wrapper = styled.div`
   display: flex;

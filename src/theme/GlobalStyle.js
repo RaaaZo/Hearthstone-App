@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 *, *::before, *::after {
@@ -20,10 +20,12 @@ body{
     color: #FFF4F4F4;
     font-weight: 400;
     font-family: 'Montserrat';
+    margin-bottom: 50px;
 
     @media(min-width: 1240px){
-        margin-top: 100px;
+        margin-top: 175px;
     }
+
 
 }
 `;

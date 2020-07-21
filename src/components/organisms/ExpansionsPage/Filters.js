@@ -1,13 +1,13 @@
-import React from 'react';
-import styled, { css } from 'styled-components';
-import { useHistory, useRouteMatch } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import React from "react";
+import styled, { css } from "styled-components";
+import { useHistory, useRouteMatch } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import {
   toggleFilterModal,
   toggleClassModal,
   closeFilterModal,
-} from 'ducks/actions/ModalActions';
-import { filterCardsByClass } from 'ducks/actions/fetchExpansionsSet';
+} from "ducks/actions/ModalActions";
+import { filterCardsByClass } from "ducks/actions/fetchExpansionsSet";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -127,7 +127,7 @@ const Filters = () => {
         <StyledClassUl isOpenClass={isOpenClassFilter}>
           <StyledListItems
             onClick={() => {
-              dispatch(filterCardsByClass('Druid'));
+              dispatch(filterCardsByClass("Druid"));
               push(`${match.url}/druid`);
               dispatch(closeFilterModal());
             }}
@@ -136,7 +136,7 @@ const Filters = () => {
           </StyledListItems>
           <StyledListItems
             onClick={() => {
-              dispatch(filterCardsByClass('Hunter'));
+              dispatch(filterCardsByClass("Hunter"));
               push(`${match.url}/hunter`);
               dispatch(closeFilterModal());
             }}
@@ -145,7 +145,7 @@ const Filters = () => {
           </StyledListItems>
           <StyledListItems
             onClick={() => {
-              dispatch(filterCardsByClass('Mage'));
+              dispatch(filterCardsByClass("Mage"));
               push(`${match.url}/mage`);
               dispatch(closeFilterModal());
             }}
@@ -154,7 +154,7 @@ const Filters = () => {
           </StyledListItems>
           <StyledListItems
             onClick={() => {
-              dispatch(filterCardsByClass('Paladin'));
+              dispatch(filterCardsByClass("Paladin"));
               push(`${match.url}/paladin`);
               dispatch(closeFilterModal());
             }}
@@ -163,7 +163,7 @@ const Filters = () => {
           </StyledListItems>
           <StyledListItems
             onClick={() => {
-              dispatch(filterCardsByClass('Priest'));
+              dispatch(filterCardsByClass("Priest"));
               push(`${match.url}/priest`);
               dispatch(closeFilterModal());
             }}
@@ -172,7 +172,7 @@ const Filters = () => {
           </StyledListItems>
           <StyledListItems
             onClick={() => {
-              dispatch(filterCardsByClass('Rogue'));
+              dispatch(filterCardsByClass("Rogue"));
               push(`${match.url}/rogue`);
               dispatch(closeFilterModal());
             }}
@@ -181,7 +181,7 @@ const Filters = () => {
           </StyledListItems>
           <StyledListItems
             onClick={() => {
-              dispatch(filterCardsByClass('Shaman'));
+              dispatch(filterCardsByClass("Shaman"));
               push(`${match.url}/shaman`);
               dispatch(closeFilterModal());
             }}
@@ -190,7 +190,7 @@ const Filters = () => {
           </StyledListItems>
           <StyledListItems
             onClick={() => {
-              dispatch(filterCardsByClass('Warlock'));
+              dispatch(filterCardsByClass("Warlock"));
               push(`${match.url}/warlock`);
               dispatch(closeFilterModal());
             }}
@@ -199,7 +199,7 @@ const Filters = () => {
           </StyledListItems>
           <StyledListItems
             onClick={() => {
-              dispatch(filterCardsByClass('Warrior'));
+              dispatch(filterCardsByClass("Warrior"));
               push(`${match.url}/warrior`);
               dispatch(closeFilterModal());
             }}
@@ -208,7 +208,7 @@ const Filters = () => {
           </StyledListItems>
           <StyledListItems
             onClick={() => {
-              dispatch(filterCardsByClass('Neutral'));
+              dispatch(filterCardsByClass("Neutral"));
               push(`${match.url}/neutral`);
               dispatch(closeFilterModal());
             }}
@@ -224,68 +224,73 @@ const Filters = () => {
         </StyledHeader>
         <StyledCardSetUl isOpen={isOpenCardSetFilter}>
           <StyledListItems
-            onClick={() => handleCloseDispatchAndPushRoute('expansions')}
+            onClick={() => handleCloseDispatchAndPushRoute("expansions")}
           >
             Podstawowe
           </StyledListItems>
           <StyledListItems
-            onClick={() => handleCloseDispatchAndPushRoute('naxxramas')}
+            onClick={() => handleCloseDispatchAndPushRoute("classic")}
+          >
+            Klasyczne
+          </StyledListItems>
+          <StyledListItems
+            onClick={() => handleCloseDispatchAndPushRoute("naxxramas")}
           >
             Naxxramas
           </StyledListItems>
           <StyledListItems
             onClick={() =>
-              handleCloseDispatchAndPushRoute('goblins_vs_gnomes_expansion')
+              handleCloseDispatchAndPushRoute("goblins_vs_gnomes_expansion")
             }
           >
             Gobliny vs Gnomy
           </StyledListItems>
           <StyledListItems
             onClick={() =>
-              handleCloseDispatchAndPushRoute('blackrock_mountain')
+              handleCloseDispatchAndPushRoute("blackrock_mountain")
             }
           >
             Czarna Góra
           </StyledListItems>
           <StyledListItems
-            onClick={() => handleCloseDispatchAndPushRoute('grand_tournament')}
+            onClick={() => handleCloseDispatchAndPushRoute("grand_tournament")}
           >
             Wielki Turniej
           </StyledListItems>
           <StyledListItems
             onClick={() =>
-              handleCloseDispatchAndPushRoute('league_of_explorers')
+              handleCloseDispatchAndPushRoute("league_of_explorers")
             }
           >
             Liga Odkrywców
           </StyledListItems>
           <StyledListItems
-            onClick={() => handleCloseDispatchAndPushRoute('old_gods')}
+            onClick={() => handleCloseDispatchAndPushRoute("old_gods")}
           >
             Przedwieczni Bogowie
           </StyledListItems>
           <StyledListItems
             onClick={() =>
-              handleCloseDispatchAndPushRoute('one_night_in_kharazan')
+              handleCloseDispatchAndPushRoute("one_night_in_kharazan")
             }
           >
             Pewnej nocy w Karazhanie
           </StyledListItems>
           <StyledListItems
             onClick={() =>
-              handleCloseDispatchAndPushRoute('mean_streets_of_gadzetan')
+              handleCloseDispatchAndPushRoute("mean_streets_of_gadzetan")
             }
           >
             Ciemne zaułki Gadżetonu
           </StyledListItems>
           <StyledListItems
-            onClick={() => handleCloseDispatchAndPushRoute('journey_to_ungoro')}
+            onClick={() => handleCloseDispatchAndPushRoute("journey_to_ungoro")}
           >
             Podróż do wnętrza Un'Goro
           </StyledListItems>
           <StyledListItems
             onClick={() =>
-              handleCloseDispatchAndPushRoute('knights_of_the_frozen_throne')
+              handleCloseDispatchAndPushRoute("knights_of_the_frozen_throne")
             }
           >
             Rycerze Mroźnego Tronu

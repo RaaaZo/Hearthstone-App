@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   border: 0;
   margin: 0;
   position: fixed;
-  bottom: 3%;
+  bottom: 5%;
   right: 3%;
   border: 2px solid ${({ theme }) => theme.darkModeTxt};
   z-index: 9999;

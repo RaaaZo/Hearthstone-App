@@ -3,6 +3,7 @@ import HeroImg from "components/organisms/ExpansionsPage/HeroImg";
 import BasicCards from "components/organisms/ExpansionsPage/SetsOfCards/BasicCards";
 import { useDispatch } from "react-redux";
 import { fetchExpansionsSet } from "ducks/actions/fetchExpansionsSet";
+
 import styled from "styled-components";
 import Filters from "components/organisms/ExpansionsPage/Filters";
 import CardTemplate from "templates/CardTemplate";
@@ -15,11 +16,11 @@ const Wrapper = styled.div`
   margin: 0 20px;
 `;
 
-const Expansions = () => {
+const ClassicExpansion = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchExpansionsSet("Basic", "basic"));
+    dispatch(fetchExpansionsSet("Classic", "classic"));
   }, [dispatch]);
 
   return (
@@ -33,4 +34,4 @@ const Expansions = () => {
   );
 };
 
-export default Expansions;
+export default ClassicExpansion;
