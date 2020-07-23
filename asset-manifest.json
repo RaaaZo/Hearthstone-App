@@ -1,31 +1,31 @@
 {
   "files": {
     "main.css": "/Hearthstone-App/static/css/main.0348cdbe.chunk.css",
-    "main.js": "/Hearthstone-App/static/js/main.03b6357f.chunk.js",
-    "main.js.map": "/Hearthstone-App/static/js/main.03b6357f.chunk.js.map",
+    "main.js": "/Hearthstone-App/static/js/main.3c852f58.chunk.js",
+    "main.js.map": "/Hearthstone-App/static/js/main.3c852f58.chunk.js.map",
     "runtime-main.js": "/Hearthstone-App/static/js/runtime-main.9ba55d64.js",
     "runtime-main.js.map": "/Hearthstone-App/static/js/runtime-main.9ba55d64.js.map",
     "static/js/2.63ec8691.chunk.js": "/Hearthstone-App/static/js/2.63ec8691.chunk.js",
     "static/js/2.63ec8691.chunk.js.map": "/Hearthstone-App/static/js/2.63ec8691.chunk.js.map",
     "index.html": "/Hearthstone-App/index.html",
-    "precache-manifest.a39221625fbdbe0cbc4164644c827ba2.js": "/Hearthstone-App/precache-manifest.a39221625fbdbe0cbc4164644c827ba2.js",
+    "precache-manifest.3bce1dc8becfd56a3853e9c8dd5b75b6.js": "/Hearthstone-App/precache-manifest.3bce1dc8becfd56a3853e9c8dd5b75b6.js",
     "service-worker.js": "/Hearthstone-App/service-worker.js",
     "static/css/main.0348cdbe.chunk.css.map": "/Hearthstone-App/static/css/main.0348cdbe.chunk.css.map",
     "static/js/2.63ec8691.chunk.js.LICENSE.txt": "/Hearthstone-App/static/js/2.63ec8691.chunk.js.LICENSE.txt",
-    "static/media/CardReversesHero.jpg": "/Hearthstone-App/static/media/CardReversesHero.6343d7fb.jpg",
-    "static/media/ExpansionsHero.jpg": "/Hearthstone-App/static/media/ExpansionsHero.135ad2ac.jpg",
-    "static/media/HomeBacks.jpg": "/Hearthstone-App/static/media/HomeBacks.16e88446.jpg",
-    "static/media/HomeCards.jpg": "/Hearthstone-App/static/media/HomeCards.2dcfb1eb.jpg",
-    "static/media/HomeHero.jpg": "/Hearthstone-App/static/media/HomeHero.116bb1dd.jpg",
-    "static/media/LandingHero.jpg": "/Hearthstone-App/static/media/LandingHero.986040f8.jpg",
-    "static/media/QualityOfCardsHero.jpg": "/Hearthstone-App/static/media/QualityOfCardsHero.db1ab9ce.jpg",
+    "static/media/CardReversesHero.jpg": "/Hearthstone-App/static/media/CardReversesHero.abf88034.jpg",
+    "static/media/ExpansionsHero.jpg": "/Hearthstone-App/static/media/ExpansionsHero.2df5bb11.jpg",
+    "static/media/HomeBacks.jpg": "/Hearthstone-App/static/media/HomeBacks.63aa4ef1.jpg",
+    "static/media/HomeCards.jpg": "/Hearthstone-App/static/media/HomeCards.0ccec8c8.jpg",
+    "static/media/HomeHero.jpg": "/Hearthstone-App/static/media/HomeHero.e90c6cdf.jpg",
+    "static/media/LandingHero.jpg": "/Hearthstone-App/static/media/LandingHero.0ed5853c.jpg",
+    "static/media/QualityOfCardsHero.jpg": "/Hearthstone-App/static/media/QualityOfCardsHero.59fd8601.jpg",
     "static/media/loadingIndicator.svg": "/Hearthstone-App/static/media/loadingIndicator.006fd0dc.svg",
-    "static/media/typesOfCardsHero.jpg": "/Hearthstone-App/static/media/typesOfCardsHero.4056e676.jpg"
+    "static/media/typesOfCardsHero.jpg": "/Hearthstone-App/static/media/typesOfCardsHero.db891974.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.9ba55d64.js",
     "static/js/2.63ec8691.chunk.js",
     "static/css/main.0348cdbe.chunk.css",
-    "static/js/main.03b6357f.chunk.js"
+    "static/js/main.3c852f58.chunk.js"
   ]
 }
