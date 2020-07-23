@@ -3,7 +3,7 @@ import {
   FETCH_BASIC_SET_SUCCESS,
   FETCH_BASIC_SET_REQUEST,
   FILTER_CARDS_BY_CLASS,
-} from "ducks/constants/FetchConstants";
+} from 'ducks/constants/FetchConstants';
 
 const initialState = {
   loading: true,
@@ -21,9 +21,9 @@ const initialState = {
   frozenThroneCardsData: [],
   oneClassCards: [],
   cardDetails: [],
-  class: "",
-  cardsLogic: "",
-  error: "",
+  class: '',
+  cardsLogic: '',
+  error: '',
 };
 
 const fetchExpansionsSet = (state = initialState, action) => {
@@ -48,7 +48,7 @@ const fetchExpansionsSet = (state = initialState, action) => {
         loading: false,
         [`${action.payload.setOfCards}CardsData`]: [],
         error: action.payload,
-        cardsLogic: "",
+        cardsLogic: '',
       };
 
     case FILTER_CARDS_BY_CLASS:
@@ -60,8 +60,7 @@ const fetchExpansionsSet = (state = initialState, action) => {
         ),
       };
 
-    case "GET_CARD_DATA":
-      console.log(action.payload.id);
+    case 'GET_CARD_DATA':
       return {
         ...state,
         cardDetails: state[`${state.cardsLogic}CardsData`].filter(

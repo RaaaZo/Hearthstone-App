@@ -1,7 +1,7 @@
-import React, { Fragment } from "react";
-import styled from "styled-components";
-import { useDispatch, useSelector } from "react-redux";
-import { closeCardDetailsModal } from "ducks/actions/cardDetailsActions";
+import React, { Fragment } from 'react';
+import styled from 'styled-components';
+import { useDispatch, useSelector } from 'react-redux';
+import { closeCardDetailsModal } from 'ducks/actions/cardDetailsActions';
 
 const Modal = styled.div`
   position: fixed;
@@ -93,11 +93,15 @@ const StyledBtn = styled.button`
   }
 `;
 
-const CardDetails = () => {
+const CardDetails = ({ cardBacks }) => {
   const dispatch = useDispatch();
 
   const detailsData = useSelector(
     (state) => state.fetchExpansionsSet.cardDetails
+  );
+
+  const cardBacksDetails = useSelector(
+    (state) => state.fetchCardBacksReducer.backDetails
   );
 
   return (
@@ -106,22 +110,36 @@ const CardDetails = () => {
         <StyledBtn onClick={() => dispatch(closeCardDetailsModal())}>
           x
         </StyledBtn>
-        {detailsData.map((item) => (
-          <Fragment key={item.cardId}>
-            <ImageWrapper>
-              <StyledImage
-                src={`https://art.hearthstonejson.com/v1/render/latest/plPL/512x/${item.cardId}.png`}
-                alt='tutaj jestem'
-              />
-            </ImageWrapper>
-            <DescWrapper>
-              <Header>Opis karty :</Header>
-              <Paragraph>{item.flavor}</Paragraph>
-              <Header>Artysta :</Header>
-              <Paragraph>{item.artist}</Paragraph>
-            </DescWrapper>
-          </Fragment>
-        ))}
+        {cardBacks
+          ? cardBacksDetails.map((item) => (
+              <Fragment key={item.cardBackId}>
+                <ImageWrapper>
+                  <StyledImage src={item.img} alt='tutaj jestem' />
+                </ImageWrapper>
+                <DescWrapper>
+                  <Header>Źródło :</Header>
+                  <Paragraph>{item.source}</Paragraph>
+                  <Header>Jak zdobyć :</Header>
+                  <Paragraph>{item.howToGet}</Paragraph>
+                </DescWrapper>
+              </Fragment>
+            ))
+          : detailsData.map((item) => (
+              <Fragment key={item.cardId}>
+                <ImageWrapper>
+                  <StyledImage
+                    src={`https://art.hearthstonejson.com/v1/render/latest/plPL/512x/${item.cardId}.png`}
+                    alt='tutaj jestem'
+                  />
+                </ImageWrapper>
+                <DescWrapper>
+                  <Header>Opis karty :</Header>
+                  <Paragraph>{item.flavor}</Paragraph>
+                  <Header>Artysta :</Header>
+                  <Paragraph>{item.artist}</Paragraph>
+                </DescWrapper>
+              </Fragment>
+            ))}
       </Wrapper>
     </Modal>
   );

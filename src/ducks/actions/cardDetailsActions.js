@@ -7,6 +7,15 @@ export const getCardData = (id) => {
   };
 };
 
+export const getBackCardData = (id) => {
+  return {
+    type: 'GET_BACK_CARD_DATA',
+    payload: {
+      id,
+    },
+  };
+};
+
 export const toggleCardDetailsModal = () => {
   return {
     type: 'TOGGLE_CARD_DETAILS_MODAL',

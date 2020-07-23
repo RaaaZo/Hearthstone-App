@@ -9,6 +9,10 @@ import TypesOfCardsHeader from 'components/organisms/TypesOfCards/Header';
 import loadingIndicator from 'Assets/images/loadingIndicator.svg';
 import CardTemplate from 'templates/CardTemplate';
 import Header from 'components/atoms/Header/Header';
+import {
+  getBackCardData,
+  toggleCardDetailsModal,
+} from 'ducks/actions/cardDetailsActions';
 
 const InnerWrapper = styled.div`
   display: flex;
@@ -58,7 +62,7 @@ const CardBacks = () => {
   }, [dispatch]);
 
   return (
-    <CardTemplate>
+    <CardTemplate cardBacks>
       <TypesOfCardsHeader ReversesOfCards />
       <Header>REWERSY KART :</Header>
       <OuterWrapper>
@@ -66,7 +70,13 @@ const CardBacks = () => {
           <img src={loadingIndicator} alt='Loading' />
         ) : (
           cardBacks.slice(0, 50).map((item) => (
-            <InnerWrapper key={item.cardBackId}>
+            <InnerWrapper
+              onClick={() => {
+                dispatch(toggleCardDetailsModal());
+                dispatch(getBackCardData(item.cardBackId));
+              }}
+              key={item.cardBackId}
+            >
               <ModifiedStyledParagraph>{item.name}</ModifiedStyledParagraph>
               <ModifiedStyledParagraph>
                 {item.description}
