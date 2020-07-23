@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Hearthstone-App/static/css/main.0348cdbe.chunk.css",
-    "main.js": "/Hearthstone-App/static/js/main.3c852f58.chunk.js",
-    "main.js.map": "/Hearthstone-App/static/js/main.3c852f58.chunk.js.map",
+    "main.js": "/Hearthstone-App/static/js/main.30409fd5.chunk.js",
+    "main.js.map": "/Hearthstone-App/static/js/main.30409fd5.chunk.js.map",
     "runtime-main.js": "/Hearthstone-App/static/js/runtime-main.9ba55d64.js",
     "runtime-main.js.map": "/Hearthstone-App/static/js/runtime-main.9ba55d64.js.map",
     "static/js/2.63ec8691.chunk.js": "/Hearthstone-App/static/js/2.63ec8691.chunk.js",
     "static/js/2.63ec8691.chunk.js.map": "/Hearthstone-App/static/js/2.63ec8691.chunk.js.map",
     "index.html": "/Hearthstone-App/index.html",
-    "precache-manifest.3bce1dc8becfd56a3853e9c8dd5b75b6.js": "/Hearthstone-App/precache-manifest.3bce1dc8becfd56a3853e9c8dd5b75b6.js",
+    "precache-manifest.5c88ea0da88f26ae647c8f233309de77.js": "/Hearthstone-App/precache-manifest.5c88ea0da88f26ae647c8f233309de77.js",
     "service-worker.js": "/Hearthstone-App/service-worker.js",
     "static/css/main.0348cdbe.chunk.css.map": "/Hearthstone-App/static/css/main.0348cdbe.chunk.css.map",
     "static/js/2.63ec8691.chunk.js.LICENSE.txt": "/Hearthstone-App/static/js/2.63ec8691.chunk.js.LICENSE.txt",
@@ -26,6 +26,6 @@
     "static/js/runtime-main.9ba55d64.js",
     "static/js/2.63ec8691.chunk.js",
     "static/css/main.0348cdbe.chunk.css",
-    "static/js/main.3c852f58.chunk.js"
+    "static/js/main.30409fd5.chunk.js"
   ]
 }
