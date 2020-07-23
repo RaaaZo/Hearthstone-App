@@ -1,31 +1,32 @@
-import React from "react";
-import styled from "styled-components";
-import { fetchCardBacks } from "ducks/actions/fetchCardBacks";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import StyledParagraph from "components/atoms/ExpansionAtoms/StyledParagraph";
-import TypesOfCardsHeader from "components/organisms/TypesOfCards/Header";
+import React from 'react';
+import styled from 'styled-components';
+import { fetchCardBacks } from 'ducks/actions/fetchCardBacks';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import StyledParagraph from 'components/atoms/ExpansionAtoms/StyledParagraph';
+import TypesOfCardsHeader from 'components/organisms/TypesOfCards/Header';
 
-import loadingIndicator from "Assets/images/loadingIndicator.svg";
-import CardTemplate from "templates/CardTemplate";
+import loadingIndicator from 'Assets/images/loadingIndicator.svg';
+import CardTemplate from 'templates/CardTemplate';
+import Header from 'components/atoms/Header/Header';
 
 const InnerWrapper = styled.div`
-  height: 700px;
   display: flex;
   flex-flow: column;
   justify-content: space-around;
   align-items: center;
   background-color: ${({ theme }) => theme.darkBrown};
   border-radius: 15px;
-  margin: 20px auto;
-  padding: 12px 20px;
+  margin: 20px 0;
+  padding: 12px 0;
   cursor: pointer;
 
   @media (min-width: 750px) {
-    max-width: 45%;
+    width: 45%;
+    height: 700px;
   }
   @media (min-width: 1040px) {
-    max-width: 30%;
+    width: 30%;
   }
 `;
 
@@ -39,6 +40,10 @@ const OuterWrapper = styled.div`
   @media (min-width: 700px) {
     justify-content: space-around;
   }
+`;
+
+const ModifiedStyledParagraph = styled(StyledParagraph)`
+  padding: 0 40px;
 `;
 
 const CardBacks = () => {
@@ -55,14 +60,17 @@ const CardBacks = () => {
   return (
     <CardTemplate>
       <TypesOfCardsHeader ReversesOfCards />
+      <Header>REWERSY KART :</Header>
       <OuterWrapper>
         {isLoading ? (
           <img src={loadingIndicator} alt='Loading' />
         ) : (
           cardBacks.slice(0, 50).map((item) => (
             <InnerWrapper key={item.cardBackId}>
-              <StyledParagraph>{item.name}</StyledParagraph>
-              <StyledParagraph>{item.description}</StyledParagraph>
+              <ModifiedStyledParagraph>{item.name}</ModifiedStyledParagraph>
+              <ModifiedStyledParagraph>
+                {item.description}
+              </ModifiedStyledParagraph>
               <img src={item.img} alt='Card Back' />
             </InnerWrapper>
           ))

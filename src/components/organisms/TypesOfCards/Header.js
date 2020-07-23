@@ -1,8 +1,11 @@
-import React from "react";
-import styled, { css } from "styled-components";
-import heroImgQuality from "Assets/images/QualityOfCardsHero.jpg";
-import heroImgTypes from "Assets/images/typesOfCardsHero.jpg";
-import heroImgReverses from "Assets/images/CardReversesHero.jpg";
+import React from 'react';
+import styled, { css } from 'styled-components';
+import heroImgQuality from 'Assets/images/QualityOfCardsHero.jpg';
+import heroImgTypes from 'Assets/images/typesOfCardsHero.jpg';
+import heroImgReverses from 'Assets/images/CardReversesHero.jpg';
+import homeCards from 'Assets/images/HomeCards.jpg';
+import homeBacks from 'Assets/images/HomeBacks.jpg';
+import heroHome from 'Assets/images/HomeHero.jpg';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -37,6 +40,24 @@ const HeroWrapper = styled.div`
       background-image: url(${heroImgReverses});
     `}
 
+  ${({ decks }) =>
+    decks &&
+    css`
+      background-image: url(${homeCards});
+    `}
+
+  ${({ backs }) =>
+    backs &&
+    css`
+      background-image: url(${homeBacks});
+    `}
+
+  ${({ home }) =>
+    home &&
+    css`
+      background-image: url(${heroHome});
+    `}
+
   @media (min-width: 632px) {
     height: 500px;
   }
@@ -51,12 +72,21 @@ const HeroWrapper = styled.div`
   }
 `;
 
-const TypesOfCardsHeader = ({ qualityOfCards, ReversesOfCards }) => {
+const TypesOfCardsHeader = ({
+  qualityOfCards,
+  ReversesOfCards,
+  decks,
+  backs,
+  home,
+}) => {
   return (
     <Wrapper>
       <HeroWrapper
         qualityOfCards={qualityOfCards}
         ReversesOfCards={ReversesOfCards}
+        decks={decks}
+        backs={backs}
+        home={home}
       />
     </Wrapper>
   );

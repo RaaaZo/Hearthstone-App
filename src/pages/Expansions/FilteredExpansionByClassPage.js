@@ -18,7 +18,9 @@ const StyledGoBack = styled.h3`
   padding: 10px 25px;
   margin: 20px;
   border-radius: 25px;
-  background-color: grey;
+  color: #6c757d;
+  background-color: #ced4da;
+  text-align: center;
   cursor: pointer;
 
   @media (min-width: 1024px) {

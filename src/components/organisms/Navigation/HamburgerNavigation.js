@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 const Wrapper = styled.div`
   display: none;
@@ -21,6 +21,15 @@ const StyledNavLinks = styled(NavLink)`
   text-decoration: none;
   cursor: pointer;
   z-index: 9999;
+  transition: color 0.3s linear;
+
+  &:hover {
+    color: ${({ theme }) => theme.blue};
+  }
+
+  &.active {
+    color: ${({ theme }) => theme.blue};
+  }
 `;
 
 const Navigation = () => {
@@ -29,9 +38,15 @@ const Navigation = () => {
       <StyledNavLinks modal to='/expansions'>
         Dodatki
       </StyledNavLinks>
-      <StyledNavLinks to='/cardBacks'>Rewersy kart</StyledNavLinks>
-      <StyledNavLinks to='/typesOfCards'>Typy kart</StyledNavLinks>
-      <StyledNavLinks to='/qualityOfCards'>Jakość kart</StyledNavLinks>
+      <StyledNavLinks activeClassName='active' to='/cardBacks'>
+        Rewersy kart
+      </StyledNavLinks>
+      <StyledNavLinks activeClassName='active' to='/typesOfCards'>
+        Typy kart
+      </StyledNavLinks>
+      <StyledNavLinks activeClassName='active' to='/qualityOfCards'>
+        Jakość kart
+      </StyledNavLinks>
     </Wrapper>
   );
 };

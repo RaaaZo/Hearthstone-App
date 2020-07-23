@@ -1,8 +1,11 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 const Paragraph = styled.p`
   font-size: ${({ theme: { fontSize } }) => fontSize.l};
   font-weight: ${({ theme: { fontWeight } }) => fontWeight.regular};
+  text-align: center;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 
   ${({ normal }) =>
     normal &&

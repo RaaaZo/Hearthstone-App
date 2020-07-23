@@ -1,9 +1,9 @@
-import React from "react";
-import styled, { css } from "styled-components";
-import { NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { closeModal } from "ducks/actions/ModalActions";
+import React from 'react';
+import styled, { css } from 'styled-components';
+import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { closeModal } from 'ducks/actions/ModalActions';
 
 const Wrapper = styled.div`
   position: fixed;
@@ -49,6 +49,16 @@ const InnerWrapper = styled.div`
 const StyledNavLinks = styled(NavLink)`
   color: ${({ theme }) => theme.darkModeTxt};
   text-decoration: none;
+  transition: color 0.3s linear;
+
+  &:hover {
+    color: ${({ theme }) => theme.blue};
+  }
+
+  &.active {
+    color: ${({ theme }) => theme.blue};
+  }
+
   @media (min-width: 950px) {
     font-size: ${({ theme }) => theme.fontSize.xl};
   }
@@ -61,20 +71,30 @@ const HamburgerModal = () => {
   return (
     <Wrapper isOpen={isOpen} onClick={(e) => e.stopPropagation()}>
       <InnerWrapper>
-        <StyledNavLinks onClick={() => dispatch(closeModal())} to='/expansions'>
+        <StyledNavLinks
+          activeClassName='active'
+          onClick={() => dispatch(closeModal())}
+          to='/expansions'
+        >
           Dodatki
         </StyledNavLinks>
 
-        <StyledNavLinks onClick={() => dispatch(closeModal())} to='/cardBacks'>
+        <StyledNavLinks
+          activeClassName='active'
+          onClick={() => dispatch(closeModal())}
+          to='/cardBacks'
+        >
           Rewersy kart
         </StyledNavLinks>
         <StyledNavLinks
+          activeClassName='active'
           onClick={() => dispatch(closeModal())}
           to='/typesOfCards'
         >
           Typy kart
         </StyledNavLinks>
         <StyledNavLinks
+          activeClassName='active'
           onClick={() => dispatch(closeModal())}
           to='/qualityOfCards'
         >

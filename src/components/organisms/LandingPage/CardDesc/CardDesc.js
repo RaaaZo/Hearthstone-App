@@ -1,9 +1,9 @@
-import React, { Fragment } from "react";
-import styled from "styled-components";
-import { useSelector } from "react-redux";
+import React, { Fragment } from 'react';
+import styled from 'styled-components';
+import { useSelector } from 'react-redux';
 
-import loadingIndicator from "Assets/images/loadingIndicator.svg";
-import Paragraph from "components/atoms/Paragraph/Paragraph";
+import loadingIndicator from 'Assets/images/loadingIndicator.svg';
+import Paragraph from 'components/atoms/Paragraph/Paragraph';
 
 const Wrapper = styled.div`
   max-width: 1280px;
@@ -27,9 +27,11 @@ const StyledHeader = styled.h3`
 const StyledParagraph = styled(Paragraph)`
   text-align: center;
   margin: 10px 17%;
+  color: ${({ theme }) => theme.yellow};
 `;
 
 const StyledSpan = styled.span`
+  margin-left: 10px;
   font-weight: bold;
   color: ${({ theme }) => theme.blue};
 `;
@@ -50,37 +52,37 @@ const CardDesc = () => {
           return (
             <Fragment key={item.cardId}>
               <StyledParagraph>
-                Nazwa: <StyledSpan>{item.name}</StyledSpan>
+                Nazwa : <StyledSpan>{item.name}</StyledSpan>
               </StyledParagraph>
               <StyledParagraph>
-                Koszt many: <StyledSpan>{item.cost}</StyledSpan>
+                Koszt many : <StyledSpan>{item.cost}</StyledSpan>
               </StyledParagraph>
               <StyledParagraph>
-                Atak: <StyledSpan>{item.attack}</StyledSpan>
+                Atak : <StyledSpan>{item.attack}</StyledSpan>
               </StyledParagraph>
               <StyledParagraph>
-                Życie: <StyledSpan>{item.health}</StyledSpan>
+                Życie : <StyledSpan>{item.health}</StyledSpan>
               </StyledParagraph>
               <StyledParagraph>
-                Dodatek: <StyledSpan>{item.cardSet}</StyledSpan>
+                Dodatek : <StyledSpan>{item.cardSet}</StyledSpan>
               </StyledParagraph>
               <StyledParagraph>
-                Moc specjalna: <StyledSpan>{item.text}</StyledSpan>
+                Moc specjalna : <StyledSpan>{item.text}</StyledSpan>
               </StyledParagraph>
               <StyledParagraph>
-                Rzadkość karty: <StyledSpan>{item.rarity}</StyledSpan>
+                Rzadkość karty : <StyledSpan>{item.rarity}</StyledSpan>
               </StyledParagraph>
               <StyledParagraph>
-                Frakcja: <StyledSpan>{item.faction}</StyledSpan>
+                Frakcja : <StyledSpan>{item.faction}</StyledSpan>
               </StyledParagraph>
               <StyledParagraph>
-                Rasa: <StyledSpan>{item.race}</StyledSpan>
+                Rasa : <StyledSpan>{item.race}</StyledSpan>
               </StyledParagraph>
               <StyledParagraph>
-                Opis: <StyledSpan>{item.flavor}</StyledSpan>
+                Opis : <StyledSpan>{item.flavor}</StyledSpan>
               </StyledParagraph>
               <StyledParagraph>
-                Autor: <StyledSpan>{item.artist}</StyledSpan>
+                Autor : <StyledSpan>{item.artist}</StyledSpan>
               </StyledParagraph>
             </Fragment>
           );
