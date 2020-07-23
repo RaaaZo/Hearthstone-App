@@ -32,11 +32,17 @@ const StyledWrapper = styled(Wrapper)`
   margin: 0 auto;
 `;
 
+const StyledHeaderByClass = styled(StyledHeader)`
+  background-color: ${({ theme, cardClass }) => theme.classColors[cardClass]};
+`;
+
 const FilteredExpansionByClassPage = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
+
   const data = useSelector((state) => state.fetchExpansionsSet.oneClassCards);
   const isLoading = useSelector((state) => state.fetchExpansionsSet.loading);
-  const history = useHistory();
+  const cardsClass = useSelector((state) => state.fetchExpansionsSet.class);
 
   const goBack = () => history.goBack();
 
@@ -45,7 +51,9 @@ const FilteredExpansionByClassPage = () => {
       <StyledWrapper>
         <HeroImg />
         <StyledGoBack onClick={goBack}>Zobacz wszystkie karty</StyledGoBack>
-        <StyledHeader>Hunter</StyledHeader>
+        <StyledHeaderByClass cardClass={cardsClass}>
+          {cardsClass}
+        </StyledHeaderByClass>
         {isLoading ? (
           <img src={loadingIndicator} alt='ładowanie' />
         ) : (
@@ -61,7 +69,7 @@ const FilteredExpansionByClassPage = () => {
               <StyledParagraph>{item.type}</StyledParagraph>
               <img
                 src={`https://art.hearthstonejson.com/v1/render/latest/plPL/256x/${item.cardId}.png`}
-                alt='tutaj jestem'
+                alt='cardImage'
               />
             </InnerWrapper>
           ))

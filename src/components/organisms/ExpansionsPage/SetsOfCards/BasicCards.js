@@ -7,22 +7,30 @@ import loadingIndicator from 'Assets/images/loadingIndicator.svg';
 const Cards = () => {
   const isLoading = useSelector((state) => state.fetchExpansionsSet.loading);
 
+  const classes = [
+    'Druid',
+    'Hunter',
+    'Mage',
+    'Paladin',
+    'Priest',
+    'Rogue',
+    'Shaman',
+    'Warlock',
+    'Warrior',
+    'Neutral',
+  ];
+
   return (
     <>
       {isLoading ? (
         <img src={loadingIndicator} alt='spinner' />
       ) : (
         <>
-          <CardsLogic cardPlayerClass='Druid' />
-          <CardsLogic cardPlayerClass='Hunter' />
-          <CardsLogic cardPlayerClass='Mage' />
-          <CardsLogic cardPlayerClass='Paladin' />
-          <CardsLogic cardPlayerClass='Priest' />
-          <CardsLogic cardPlayerClass='Rogue' />
-          <CardsLogic cardPlayerClass='Shaman' />
-          <CardsLogic cardPlayerClass='Warlock' />
-          <CardsLogic cardPlayerClass='Warrior' />
-          <CardsLogic cardPlayerClass='Neutral' />
+          <CardsLogic
+            cardPlayerClass={
+              classes[Math.floor(Math.random() * classes.length)]
+            }
+          />
         </>
       )}
     </>
