@@ -35,6 +35,7 @@ const StyledNavLinks = styled(NavLink)`
 const Navigation = () => {
   return (
     <Wrapper>
+      <StyledNavLinks to='/home'>Home</StyledNavLinks>
       <StyledNavLinks modal to='/expansions'>
         Dodatki
       </StyledNavLinks>

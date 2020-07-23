@@ -71,6 +71,9 @@ const HamburgerModal = () => {
   return (
     <Wrapper isOpen={isOpen} onClick={(e) => e.stopPropagation()}>
       <InnerWrapper>
+        <StyledNavLinks to='/home' onClick={() => dispatch(closeModal())}>
+          Home
+        </StyledNavLinks>
         <StyledNavLinks
           activeClassName='active'
           onClick={() => dispatch(closeModal())}

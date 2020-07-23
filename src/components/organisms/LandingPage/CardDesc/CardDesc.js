@@ -31,7 +31,8 @@ const StyledParagraph = styled(Paragraph)`
 `;
 
 const StyledSpan = styled.span`
-  margin-left: 10px;
+  display: block;
+  margin-top: 10px;
   font-weight: bold;
   color: ${({ theme }) => theme.blue};
 `;
