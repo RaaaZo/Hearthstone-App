@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "41d2f7dbfe6aaf42265c94e96b57c486",
+    "revision": "3e0a1ffe6fce9fef2bc865d3c301c8dd",
     "url": "/Hearthstone-App/index.html"
   },
   {
-    "revision": "5df05a473611c5472057",
+    "revision": "ffd63f3ae3a1c5e77eec",
     "url": "/Hearthstone-App/static/css/main.0348cdbe.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Hearthstone-App/static/js/2.4516b548.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5df05a473611c5472057",
-    "url": "/Hearthstone-App/static/js/main.9c4b416a.chunk.js"
+    "revision": "ffd63f3ae3a1c5e77eec",
+    "url": "/Hearthstone-App/static/js/main.553ec411.chunk.js"
   },
   {
     "revision": "1e01eb3d3e8addbe55b9",
