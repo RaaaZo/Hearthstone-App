@@ -29,7 +29,6 @@ const StyledFirstImg = styled(Image)`
 
 const StyledBtn = styled(Button)`
   text-decoration: none;
-  z-index: 999;
 `;
 
 const CardBtn = () => {

@@ -57,22 +57,24 @@ const FilteredExpansionByClassPage = () => {
         {isLoading ? (
           <img src={loadingIndicator} alt='ładowanie' />
         ) : (
-          data.map((item) => (
-            <StyledInnerWrapper
-              key={item.cardId}
-              onClick={() => {
-                dispatch(getCardData(item.cardId));
-                dispatch(toggleCardDetailsModal());
-              }}
-            >
-              <StyledParagraph>{item.name}</StyledParagraph>
-              <StyledParagraph>{item.type}</StyledParagraph>
-              <img
-                src={`https://art.hearthstonejson.com/v1/render/latest/plPL/256x/${item.cardId}.png`}
-                alt='cardImage'
-              />
-            </StyledInnerWrapper>
-          ))
+          data
+            .filter((item) => item.type !== 'Hero')
+            .map((item) => (
+              <StyledInnerWrapper
+                key={item.cardId}
+                onClick={() => {
+                  dispatch(getCardData(item.cardId));
+                  dispatch(toggleCardDetailsModal());
+                }}
+              >
+                <StyledParagraph>{item.name}</StyledParagraph>
+                <StyledParagraph>{item.type}</StyledParagraph>
+                <img
+                  src={`https://art.hearthstonejson.com/v1/render/latest/plPL/256x/${item.cardId}.png`}
+                  alt='cardImage'
+                />
+              </StyledInnerWrapper>
+            ))
         )}
       </Wrapper>
     </CardTemplate>

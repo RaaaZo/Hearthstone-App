@@ -40,7 +40,7 @@ const StyledImage = styled.img`
   width: 100%;
   height: 60%;
 
-  @media (min-width: 768px) {
+  @media (min-width: 720px) {
     display: block;
   }
 `;
@@ -51,7 +51,8 @@ const ImageWrapper = styled.div`
 `;
 
 const DescWrapper = styled.div`
-  width: 80%;
+  position: relative;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-flow: column;
@@ -61,6 +62,10 @@ const DescWrapper = styled.div`
   background-color: ${({ theme }) => theme.darkBrown};
   text-align: center;
   border-radius: 15px;
+
+  @media (min-width: 720px) {
+    width: 80%;
+  }
 `;
 
 const Header = styled.h3`
@@ -90,7 +95,7 @@ const StyledBtn = styled.button`
     padding: 12px 16px;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1440px) {
     font-size: 16px;
     padding: 16px 20px;
   }
@@ -110,9 +115,6 @@ const CardDetails = ({ cardBacks }) => {
   return (
     <Modal onClick={() => dispatch(closeCardDetailsModal())}>
       <Wrapper onClick={(e) => e.stopPropagation()}>
-        <StyledBtn onClick={() => dispatch(closeCardDetailsModal())}>
-          x
-        </StyledBtn>
         {cardBacks
           ? cardBacksDetails.map((item) => (
               <Fragment key={item.cardBackId}>
@@ -120,6 +122,9 @@ const CardDetails = ({ cardBacks }) => {
                   <StyledImage src={item.img} alt='tutaj jestem' />
                 </ImageWrapper>
                 <DescWrapper>
+                  <StyledBtn onClick={() => dispatch(closeCardDetailsModal())}>
+                    x
+                  </StyledBtn>
                   <Header>Źródło :</Header>
                   <Paragraph>{item.source}</Paragraph>
                   <Header>Jak zdobyć :</Header>
@@ -136,6 +141,9 @@ const CardDetails = ({ cardBacks }) => {
                   />
                 </ImageWrapper>
                 <DescWrapper>
+                  <StyledBtn onClick={() => dispatch(closeCardDetailsModal())}>
+                    x
+                  </StyledBtn>
                   <Header>Opis karty :</Header>
                   <Paragraph>{item.flavor}</Paragraph>
                   <Header>Artysta :</Header>
