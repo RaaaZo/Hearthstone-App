@@ -11,6 +11,7 @@ const Wrapper = styled.div`
   width: 100%;
   height: 4%;
   background-color: ${({ theme }) => theme.darkModeBgc};
+  z-index: 99999;
 `;
 
 const StyledLink = styled.a`

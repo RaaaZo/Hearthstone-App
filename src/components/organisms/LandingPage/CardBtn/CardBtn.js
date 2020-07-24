@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import Button from "components/atoms/Button/Button";
-import { Link } from "react-router-dom";
-import Image from "components/atoms/Image/Image";
+import React from 'react';
+import styled from 'styled-components';
+import Button from 'components/atoms/Button/Button';
+import { Link } from 'react-router-dom';
+import Image from 'components/atoms/Image/Image';
 
 const Wrapper = styled.div`
   display: flex;
@@ -29,7 +29,7 @@ const StyledFirstImg = styled(Image)`
 
 const StyledBtn = styled(Button)`
   text-decoration: none;
-  z-index: 9999999;
+  z-index: 999;
 `;
 
 const CardBtn = () => {

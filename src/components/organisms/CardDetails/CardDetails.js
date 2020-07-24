@@ -19,6 +19,7 @@ const Wrapper = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   width: 90%;
+  height: 300px;
   margin: 0 auto;
   display: flex;
   flex-flow: row;
@@ -26,17 +27,18 @@ const Wrapper = styled.div`
   align-items: center;
 
   @media (min-width: 1024px) {
-    width: 70%;
+    width: 90%;
   }
 
   @media (min-width: 1440px) {
-    width: 50%;
+    width: 70%;
   }
 `;
 
 const StyledImage = styled.img`
   display: none;
   width: 100%;
+  height: 60%;
 
   @media (min-width: 768px) {
     display: block;
@@ -45,10 +47,11 @@ const StyledImage = styled.img`
 
 const ImageWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  align-items: center;
 `;
 
 const DescWrapper = styled.div`
+  width: 80%;
   height: 100%;
   display: flex;
   flex-flow: column;

@@ -5,7 +5,6 @@ import loadingIndicator from 'Assets/images/loadingIndicator.svg';
 import StyledHeader from 'components/atoms/ExpansionAtoms/StyledHeader';
 import StyledParagraph from 'components/atoms/ExpansionAtoms/StyledParagraph';
 import InnerWrapper from 'components/atoms/ExpansionAtoms/InnerWrapper';
-import Wrapper from 'components/atoms/ExpansionAtoms/Wrapper';
 import HeroImg from 'components/organisms/ExpansionsPage/HeroImg';
 import { useHistory } from 'react-router-dom';
 import {
@@ -13,6 +12,7 @@ import {
   toggleCardDetailsModal,
 } from 'ducks/actions/cardDetailsActions';
 import CardTemplate from 'templates/CardTemplate';
+import Wrapper from 'components/atoms/ExpansionAtoms/Wrapper';
 
 const StyledGoBack = styled.h3`
   padding: 10px 25px;
@@ -28,8 +28,8 @@ const StyledGoBack = styled.h3`
   }
 `;
 
-const StyledWrapper = styled(Wrapper)`
-  margin: 0 auto;
+const StyledInnerWrapper = styled(InnerWrapper)`
+  margin: 20px 0;
 `;
 
 const StyledHeaderByClass = styled(StyledHeader)`
@@ -48,7 +48,7 @@ const FilteredExpansionByClassPage = () => {
 
   return (
     <CardTemplate>
-      <StyledWrapper>
+      <Wrapper>
         <HeroImg />
         <StyledGoBack onClick={goBack}>Zobacz wszystkie karty</StyledGoBack>
         <StyledHeaderByClass cardClass={cardsClass}>
@@ -58,7 +58,7 @@ const FilteredExpansionByClassPage = () => {
           <img src={loadingIndicator} alt='ładowanie' />
         ) : (
           data.map((item) => (
-            <InnerWrapper
+            <StyledInnerWrapper
               key={item.cardId}
               onClick={() => {
                 dispatch(getCardData(item.cardId));
@@ -71,10 +71,10 @@ const FilteredExpansionByClassPage = () => {
                 src={`https://art.hearthstonejson.com/v1/render/latest/plPL/256x/${item.cardId}.png`}
                 alt='cardImage'
               />
-            </InnerWrapper>
+            </StyledInnerWrapper>
           ))
         )}
-      </StyledWrapper>
+      </Wrapper>
     </CardTemplate>
   );
 };

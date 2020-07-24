@@ -19,8 +19,6 @@ const InnerWrapper = styled.div`
   flex-flow: column;
   justify-content: space-space-between;
   align-items: center;
-  padding: 30px;
-  margin: 30px;
   background-color: ${({ theme }) => theme.darkBrown};
   color: ${({ theme }) => theme.darkModeTxt};
   text-decoration: none;
