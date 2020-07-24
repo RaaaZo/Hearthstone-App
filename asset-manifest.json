@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/Hearthstone-App/static/css/main.0348cdbe.chunk.css",
-    "main.js": "/Hearthstone-App/static/js/main.30409fd5.chunk.js",
-    "main.js.map": "/Hearthstone-App/static/js/main.30409fd5.chunk.js.map",
+    "main.js": "/Hearthstone-App/static/js/main.a402764e.chunk.js",
+    "main.js.map": "/Hearthstone-App/static/js/main.a402764e.chunk.js.map",
     "runtime-main.js": "/Hearthstone-App/static/js/runtime-main.9ba55d64.js",
     "runtime-main.js.map": "/Hearthstone-App/static/js/runtime-main.9ba55d64.js.map",
-    "static/js/2.63ec8691.chunk.js": "/Hearthstone-App/static/js/2.63ec8691.chunk.js",
-    "static/js/2.63ec8691.chunk.js.map": "/Hearthstone-App/static/js/2.63ec8691.chunk.js.map",
+    "static/js/2.4516b548.chunk.js": "/Hearthstone-App/static/js/2.4516b548.chunk.js",
+    "static/js/2.4516b548.chunk.js.map": "/Hearthstone-App/static/js/2.4516b548.chunk.js.map",
     "index.html": "/Hearthstone-App/index.html",
-    "precache-manifest.5c88ea0da88f26ae647c8f233309de77.js": "/Hearthstone-App/precache-manifest.5c88ea0da88f26ae647c8f233309de77.js",
+    "precache-manifest.fc4317a8d0fd647ef4a52c5cafeed986.js": "/Hearthstone-App/precache-manifest.fc4317a8d0fd647ef4a52c5cafeed986.js",
     "service-worker.js": "/Hearthstone-App/service-worker.js",
     "static/css/main.0348cdbe.chunk.css.map": "/Hearthstone-App/static/css/main.0348cdbe.chunk.css.map",
-    "static/js/2.63ec8691.chunk.js.LICENSE.txt": "/Hearthstone-App/static/js/2.63ec8691.chunk.js.LICENSE.txt",
+    "static/js/2.4516b548.chunk.js.LICENSE.txt": "/Hearthstone-App/static/js/2.4516b548.chunk.js.LICENSE.txt",
     "static/media/CardReversesHero.jpg": "/Hearthstone-App/static/media/CardReversesHero.abf88034.jpg",
     "static/media/ExpansionsHero.jpg": "/Hearthstone-App/static/media/ExpansionsHero.2df5bb11.jpg",
     "static/media/HomeBacks.jpg": "/Hearthstone-App/static/media/HomeBacks.63aa4ef1.jpg",
@@ -24,8 +24,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.9ba55d64.js",
-    "static/js/2.63ec8691.chunk.js",
+    "static/js/2.4516b548.chunk.js",
     "static/css/main.0348cdbe.chunk.css",
-    "static/js/main.30409fd5.chunk.js"
+    "static/js/main.a402764e.chunk.js"
   ]
 }
